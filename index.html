@@ -3,7 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MonRénoMatch — Votre projet de rénovation commence ici</title>
+<title>MonRénoMatch — Trouvez un entrepreneur pour votre projet de rénovation au Québec</title>
+<meta name="description" content="Décrivez votre projet de rénovation résidentielle et soyez mis en relation gratuitement avec un entrepreneur qualifié au Québec. Cuisine, salle de bain, sous-sol et plus.">
+<link rel="canonical" href="https://monrenomatch.ca/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MonRénoMatch">
+<meta property="og:title" content="MonRénoMatch — Trouvez un entrepreneur pour votre projet de rénovation">
+<meta property="og:description" content="Décrivez votre projet en quelques minutes et soyez mis en relation gratuitement avec un entrepreneur qualifié au Québec.">
+<meta property="og:url" content="https://monrenomatch.ca/">
+<meta property="og:locale" content="fr_CA">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MonRénoMatch — Trouvez un entrepreneur pour votre projet de rénovation">
+<meta name="twitter:description" content="Décrivez votre projet en quelques minutes et soyez mis en relation gratuitement avec un entrepreneur qualifié au Québec.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12L12 4l9 8M6 10.5V20h12v-9.5' fill='none' stroke='%23b5533f' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap');
 
@@ -240,13 +255,33 @@
 
   @media (max-width:860px){
     .hero-grid{grid-template-columns:1fr;}
-    .hero h1{font-size:2.3rem; max-width:none;}
+    .hero{padding:40px 0 40px;}
+    .hero h1{font-size:2rem; max-width:none;}
     .hero-illustration{order:-1;}
+    .hero-illustration svg{max-width:220px; height:auto;}
     .cat-grid{grid-template-columns:1fr 1fr;}
     .steps-3{grid-template-columns:1fr;}
     .why-grid{grid-template-columns:1fr 1fr;}
-    .nav-links{gap:14px;}
-    .opt-grid{grid-template-columns:1fr;}
+    .opt-grid{grid-template-columns:1fr !important;}
+    .section{padding:44px 0;}
+    .final-cta{margin:0 16px; padding:36px 22px;}
+    .subpage-wrap{padding:32px 16px 60px;}
+  }
+
+  @media (max-width:640px){
+    .nav{padding:14px 16px; flex-wrap:wrap; gap:10px;}
+    .nav-links{width:100%; justify-content:space-between; gap:10px;}
+    .nav-links a{display:none;}
+    .wrap{padding:0 16px;}
+    .hero h1{font-size:1.7rem;}
+    .hero .eyebrow{font-size:0.7rem;}
+    .cat-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .section-head h2{font-size:1.5rem;}
+    .subpage-header{padding:12px 16px; flex-wrap:wrap; gap:10px;}
+    .subpage-header .btn-sm{font-size:0.78rem; padding:8px 12px;}
+    .form-stage{margin:20px auto 60px;}
+    .form-header{padding:14px 16px; flex-wrap:wrap; gap:10px;}
   }
 </style>
 </head>
