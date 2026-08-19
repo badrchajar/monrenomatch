@@ -75,6 +75,19 @@
   }
   .lang-toggle button.active{background:var(--ardoise-950); color:#fff;}
 
+  /* ---------- SUBPAGES (about/contact/legal) ---------- */
+  .subpage-header{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px; border-bottom:1px solid var(--gris-300);
+  }
+  .subpage-wrap{max-width:720px; margin:0 auto; padding:48px 24px 80px;}
+  .subpage-wrap h1{font-size:2.1rem; margin-bottom:28px;}
+  .subpage-wrap h2{font-size:1.2rem; margin:30px 0 10px;}
+  .subpage-wrap p{color:var(--ardoise-600); margin-bottom:14px;}
+  .subpage-wrap ul{color:var(--ardoise-600); margin:0 0 14px; padding-left:20px; line-height:1.7;}
+  .subpage-wrap a.inline-link{color:var(--brique-700); text-decoration:underline;}
+  .subpage-footer{padding:24px; text-align:center; font-size:0.78rem; color:var(--gris-500); border-top:1px solid var(--gris-300); margin-top:24px;}
+
   /* ---------- HERO ---------- */
   .hero{padding:72px 0 56px;}
   .hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;}
@@ -250,7 +263,7 @@
       <div class="nav-links">
         <a href="#comment-ca-marche" data-i18n="nav.how">Comment ça marche</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
-        <a class="entrepreneur-link" href="#" data-i18n="nav.contractor">Vous êtes entrepreneur?</a>
+        <a class="entrepreneur-link" href="#" onclick="showPage('contactView'); return false;" data-i18n="nav.contractor">Vous êtes entrepreneur?</a>
         <div class="lang-toggle">
           <button id="langBtnFr" onclick="setLang('fr')">FR</button>
           <button id="langBtnEn" onclick="setLang('en')">EN</button>
@@ -407,16 +420,143 @@
         MonRénoMatch
       </div>
       <div class="footer-links">
-        <a href="#" data-i18n="footer.about">À propos</a>
-        <a href="#" data-i18n="footer.contact">Contact</a>
-        <a href="#" data-i18n="footer.contractors">Pour entrepreneurs</a>
-        <a href="#" data-i18n="footer.privacy">Politique de confidentialité</a>
-        <a href="#" data-i18n="footer.terms">Conditions d'utilisation</a>
-        <a href="#" data-i18n="footer.cookies">Gestion des cookies</a>
+        <a href="#" onclick="showPage('aboutView'); return false;" data-i18n="footer.about">À propos</a>
+        <a href="#" onclick="showPage('contactView'); return false;" data-i18n="footer.contact">Contact</a>
+        <a href="#" onclick="showPage('contactView'); return false;" data-i18n="footer.contractors">Pour entrepreneurs</a>
+        <a href="#" onclick="showPage('privacyView'); return false;" data-i18n="footer.privacy">Politique de confidentialité</a>
+        <a href="#" onclick="showPage('termsView'); return false;" data-i18n="footer.terms">Conditions d'utilisation</a>
+        <a href="#" onclick="showPage('cookiesView'); return false;" data-i18n="footer.cookies">Gestion des cookies</a>
       </div>
     </div>
     <div class="wrap footer-bottom" data-i18n="footer.copyright">© 2026 MonRénoMatch. Tous droits réservés.</div>
   </footer>
+</div>
+
+<!-- ======================= ABOUT VIEW ======================= -->
+<div id="aboutView" style="display:none;">
+  <header class="site"><div class="subpage-header wrap">
+    <div class="logo"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <div class="lang-toggle"><button id="langBtnFrAbout" onclick="setLang('fr')">FR</button><button id="langBtnEnAbout" onclick="setLang('en')">EN</button></div>
+      <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
+    </div>
+  </div></header>
+  <div class="subpage-wrap">
+    <h1 data-i18n="about.title">À propos de MonRénoMatch</h1>
+    <p data-i18n="about.p1">MonRénoMatch est une plateforme québécoise qui aide les propriétaires à trouver un entrepreneur adapté à leur projet de rénovation résidentielle.</p>
+    <p data-i18n="about.p2">Nous sommes une jeune entreprise en démarrage, basée au Québec. Notre objectif est simple : simplifier la mise en relation entre les propriétaires et des entrepreneurs sérieux, sans démarche compliquée.</p>
+    <p data-i18n="about.p3">Le service est entièrement gratuit pour les propriétaires. Ce sont les entrepreneurs partenaires qui font affaire avec nous pour recevoir des demandes de soumission qualifiées.</p>
+  </div>
+  <div class="subpage-footer" data-i18n="footer.copyright">© 2026 MonRénoMatch. Tous droits réservés.</div>
+</div>
+
+<!-- ======================= CONTACT VIEW ======================= -->
+<div id="contactView" style="display:none;">
+  <header class="site"><div class="subpage-header wrap">
+    <div class="logo"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <div class="lang-toggle"><button id="langBtnFrContact" onclick="setLang('fr')">FR</button><button id="langBtnEnContact" onclick="setLang('en')">EN</button></div>
+      <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
+    </div>
+  </div></header>
+  <div class="subpage-wrap">
+    <h1 data-i18n="contact.title">Contact</h1>
+    <p data-i18n="contact.p1">Une question, ou vous êtes entrepreneur et souhaitez devenir partenaire? Écrivez-nous.</p>
+    <p><strong data-i18n="contact.emailLabel">Courriel :</strong> <a class="inline-link" href="mailto:info@monrenomatch.ca">info@monrenomatch.ca</a></p>
+    <p data-i18n="contact.p2">Nous répondons généralement en moins de 48 heures.</p>
+    <h2 data-i18n="contact.contractorTitle">Vous êtes entrepreneur?</h2>
+    <p data-i18n="contact.contractorP">Nous cherchons des entrepreneurs partenaires en rénovation résidentielle au Québec. Écrivez-nous à l'adresse ci-dessus avec le nom de votre entreprise, votre territoire desservi et vos types de projets, et nous vous contacterons.</p>
+  </div>
+  <div class="subpage-footer" data-i18n="footer.copyright">© 2026 MonRénoMatch. Tous droits réservés.</div>
+</div>
+
+<!-- ======================= PRIVACY VIEW ======================= -->
+<div id="privacyView" style="display:none;">
+  <header class="site"><div class="subpage-header wrap">
+    <div class="logo"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <div class="lang-toggle"><button id="langBtnFrPriv" onclick="setLang('fr')">FR</button><button id="langBtnEnPriv" onclick="setLang('en')">EN</button></div>
+      <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
+    </div>
+  </div></header>
+  <div class="subpage-wrap">
+    <h1 data-i18n="privacy.title">Politique de confidentialité</h1>
+    <p data-i18n="privacy.intro">Cette politique explique quels renseignements personnels MonRénoMatch recueille, pourquoi, et quels sont vos droits. Elle est rédigée dans le respect de la Loi 25 sur la protection des renseignements personnels au Québec.</p>
+
+    <h2 data-i18n="privacy.h1">Renseignements recueillis</h2>
+    <p data-i18n="privacy.p1">Lorsque vous remplissez notre formulaire, nous recueillons : votre nom, numéro de téléphone, courriel, ville et code postal, ainsi que les détails de votre projet de rénovation (type, budget approximatif, échéancier, description).</p>
+
+    <h2 data-i18n="privacy.h2">Utilisation des renseignements</h2>
+    <p data-i18n="privacy.p2">Ces renseignements sont utilisés uniquement pour évaluer votre projet et vous mettre en relation avec un entrepreneur partenaire adapté à votre région et à vos besoins. Ils ne sont jamais vendus à des tiers à des fins publicitaires.</p>
+
+    <h2 data-i18n="privacy.h3">Partage avec les entrepreneurs partenaires</h2>
+    <p data-i18n="privacy.p3">Vos coordonnées et les détails de votre projet peuvent être partagés avec un entrepreneur partenaire sélectionné pour votre demande, uniquement après que vous ayez donné votre consentement explicite lors de la soumission du formulaire.</p>
+
+    <h2 data-i18n="privacy.h4">Conservation des données</h2>
+    <p data-i18n="privacy.p4">Vos renseignements sont conservés aussi longtemps que nécessaire pour vous offrir le service, puis supprimés ou anonymisés lorsqu'ils ne sont plus utiles à cette fin.</p>
+
+    <h2 data-i18n="privacy.h5">Vos droits</h2>
+    <p data-i18n="privacy.p5">Vous pouvez en tout temps demander l'accès à vos renseignements, leur rectification, ou leur suppression. Toute demande de suppression sera traitée dans un délai raisonnable, généralement sous 30 jours.</p>
+
+    <h2 data-i18n="privacy.h6">Responsable de la protection des renseignements personnels</h2>
+    <p data-i18n="privacy.p6">Pour toute question ou demande concernant vos renseignements personnels, contactez notre responsable à <a class="inline-link" href="mailto:info@monrenomatch.ca">info@monrenomatch.ca</a>.</p>
+
+    <p style="font-size:0.8rem; color:var(--gris-500); margin-top:30px;" data-i18n="privacy.note">Cette politique est un point de départ et sera revue par un professionnel du droit avant un lancement à grande échelle. Dernière mise à jour : 2026.</p>
+  </div>
+  <div class="subpage-footer" data-i18n="footer.copyright">© 2026 MonRénoMatch. Tous droits réservés.</div>
+</div>
+
+<!-- ======================= TERMS VIEW ======================= -->
+<div id="termsView" style="display:none;">
+  <header class="site"><div class="subpage-header wrap">
+    <div class="logo"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <div class="lang-toggle"><button id="langBtnFrTerms" onclick="setLang('fr')">FR</button><button id="langBtnEnTerms" onclick="setLang('en')">EN</button></div>
+      <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
+    </div>
+  </div></header>
+  <div class="subpage-wrap">
+    <h1 data-i18n="terms.title">Conditions d'utilisation</h1>
+
+    <h2 data-i18n="terms.h1">Description du service</h2>
+    <p data-i18n="terms.p1">MonRénoMatch est une plateforme de mise en relation entre des propriétaires ayant un projet de rénovation résidentielle et des entrepreneurs partenaires au Québec. Le service est gratuit pour les propriétaires.</p>
+
+    <h2 data-i18n="terms.h2">Aucune garantie de résultat</h2>
+    <p data-i18n="terms.p2">MonRénoMatch met en relation les propriétaires avec des entrepreneurs, mais ne garantit pas qu'un entrepreneur sera disponible pour chaque projet, ni la qualité, le prix ou les résultats des travaux effectués par un entrepreneur partenaire.</p>
+
+    <h2 data-i18n="terms.h3">Responsabilités du propriétaire</h2>
+    <p data-i18n="terms.p3">En soumettant le formulaire, vous confirmez que les renseignements fournis sont exacts. Toute entente conclue avec un entrepreneur relève uniquement de vous et de l'entrepreneur; MonRénoMatch n'est pas partie à ce contrat.</p>
+
+    <h2 data-i18n="terms.h4">Limitation de responsabilité</h2>
+    <p data-i18n="terms.p4">MonRénoMatch agit uniquement comme intermédiaire de mise en relation et ne peut être tenu responsable des travaux effectués, des délais, ou de tout différend entre un propriétaire et un entrepreneur.</p>
+
+    <h2 data-i18n="terms.h5">Modifications</h2>
+    <p data-i18n="terms.p5">Ces conditions peuvent être mises à jour périodiquement. La version en vigueur est toujours celle affichée sur cette page.</p>
+
+    <h2 data-i18n="terms.h6">Loi applicable</h2>
+    <p data-i18n="terms.p6">Ces conditions sont régies par les lois applicables dans la province de Québec, Canada.</p>
+
+    <p style="font-size:0.8rem; color:var(--gris-500); margin-top:30px;" data-i18n="terms.note">Ce document est un point de départ et sera revu par un professionnel du droit avant un lancement à grande échelle. Dernière mise à jour : 2026.</p>
+  </div>
+  <div class="subpage-footer" data-i18n="footer.copyright">© 2026 MonRénoMatch. Tous droits réservés.</div>
+</div>
+
+<!-- ======================= COOKIES VIEW ======================= -->
+<div id="cookiesView" style="display:none;">
+  <header class="site"><div class="subpage-header wrap">
+    <div class="logo"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <div class="lang-toggle"><button id="langBtnFrCookies" onclick="setLang('fr')">FR</button><button id="langBtnEnCookies" onclick="setLang('en')">EN</button></div>
+      <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
+    </div>
+  </div></header>
+  <div class="subpage-wrap">
+    <h1 data-i18n="cookies.title">Gestion des cookies</h1>
+    <p data-i18n="cookies.p1">Ce site utilise des cookies essentiels au bon fonctionnement du site (par exemple, pour mémoriser votre choix de langue), ainsi que des cookies d'analyse pour comprendre comment le site est utilisé.</p>
+    <p data-i18n="cookies.p2">Les cookies essentiels ne nécessitent pas votre consentement. Les cookies d'analyse ou publicitaires, lorsqu'ils sont utilisés, requièrent votre consentement préalable, conformément à la Loi 25.</p>
+    <p data-i18n="cookies.p3">Vous pouvez désactiver les cookies en tout temps dans les paramètres de votre navigateur.</p>
+  </div>
+  <div class="subpage-footer" data-i18n="footer.copyright">© 2026 MonRénoMatch. Tous droits réservés.</div>
 </div>
 
 <!-- ======================= FORM VIEW ======================= -->
@@ -595,7 +735,7 @@
       's6.desc':'Description du projet','s6.descPh':'ex. Refaire la cuisine au complet, incluant les armoires et le comptoir...',
       's6.name':'Nom complet','s6.namePh':'Votre nom','s6.phone':'Téléphone','s6.email':'Courriel',
       's6.pref':'Comment préférez-vous être contacté?',
-      's6.consent':'J\'accepte que MonRénoMatch partage mes coordonnées avec un entrepreneur partenaire correspondant à mon projet, conformément à la <a href="#" style="text-decoration:underline;">politique de confidentialité</a>.',
+      's6.consent':'J\'accepte que MonRénoMatch partage mes coordonnées avec un entrepreneur partenaire correspondant à mon projet, conformément à la <a href="#" onclick="showPage(\'privacyView\'); return false;" style="text-decoration:underline;">politique de confidentialité</a>.',
       'opt.kitchen':'Cuisine','opt.bath':'Salle de bain','opt.basement':'Sous-sol','opt.full':'Rénovation complète',
       'opt.addition':'Agrandissement','opt.roof':'Toiture','opt.windows':'Fenêtres et portes','opt.exterior':'Extérieur','opt.other':'Autre',
       'opt.yes':'Oui','opt.no':'Non',
@@ -605,7 +745,51 @@
       'btn.continue':'Continuer →','btn.back':'← Retour','btn.submit':'Envoyer ma demande',
       'thanks.title':'Merci, votre projet a été reçu.',
       'thanks.sub':'Nous analysons votre demande et cherchons un professionnel adapté à votre projet et votre région. La majorité des propriétaires sont contactés en moins de 48 heures.',
-      'thanks.home':"Retour à l'accueil"
+      'thanks.home':"Retour à l'accueil",
+      'page.back':"← Retour à l'accueil",
+      'about.title':'À propos de MonRénoMatch',
+      'about.p1':'MonRénoMatch est une plateforme québécoise qui aide les propriétaires à trouver un entrepreneur adapté à leur projet de rénovation résidentielle.',
+      'about.p2':'Nous sommes une jeune entreprise en démarrage, basée au Québec. Notre objectif est simple : simplifier la mise en relation entre les propriétaires et des entrepreneurs sérieux, sans démarche compliquée.',
+      'about.p3':'Le service est entièrement gratuit pour les propriétaires. Ce sont les entrepreneurs partenaires qui font affaire avec nous pour recevoir des demandes de soumission qualifiées.',
+      'contact.title':'Contact',
+      'contact.p1':'Une question, ou vous êtes entrepreneur et souhaitez devenir partenaire? Écrivez-nous.',
+      'contact.emailLabel':'Courriel :',
+      'contact.p2':'Nous répondons généralement en moins de 48 heures.',
+      'contact.contractorTitle':'Vous êtes entrepreneur?',
+      'contact.contractorP':"Nous cherchons des entrepreneurs partenaires en rénovation résidentielle au Québec. Écrivez-nous à l'adresse ci-dessus avec le nom de votre entreprise, votre territoire desservi et vos types de projets, et nous vous contacterons.",
+      'privacy.title':'Politique de confidentialité',
+      'privacy.intro':'Cette politique explique quels renseignements personnels MonRénoMatch recueille, pourquoi, et quels sont vos droits. Elle est rédigée dans le respect de la Loi 25 sur la protection des renseignements personnels au Québec.',
+      'privacy.h1':'Renseignements recueillis',
+      'privacy.p1':'Lorsque vous remplissez notre formulaire, nous recueillons : votre nom, numéro de téléphone, courriel, ville et code postal, ainsi que les détails de votre projet de rénovation (type, budget approximatif, échéancier, description).',
+      'privacy.h2':'Utilisation des renseignements',
+      'privacy.p2':'Ces renseignements sont utilisés uniquement pour évaluer votre projet et vous mettre en relation avec un entrepreneur partenaire adapté à votre région et à vos besoins. Ils ne sont jamais vendus à des tiers à des fins publicitaires.',
+      'privacy.h3':'Partage avec les entrepreneurs partenaires',
+      'privacy.p3':'Vos coordonnées et les détails de votre projet peuvent être partagés avec un entrepreneur partenaire sélectionné pour votre demande, uniquement après que vous ayez donné votre consentement explicite lors de la soumission du formulaire.',
+      'privacy.h4':'Conservation des données',
+      'privacy.p4':"Vos renseignements sont conservés aussi longtemps que nécessaire pour vous offrir le service, puis supprimés ou anonymisés lorsqu'ils ne sont plus utiles à cette fin.",
+      'privacy.h5':'Vos droits',
+      'privacy.p5':"Vous pouvez en tout temps demander l'accès à vos renseignements, leur rectification, ou leur suppression. Toute demande de suppression sera traitée dans un délai raisonnable, généralement sous 30 jours.",
+      'privacy.h6':'Responsable de la protection des renseignements personnels',
+      'privacy.p6':'Pour toute question ou demande concernant vos renseignements personnels, contactez notre responsable à <a class="inline-link" href="mailto:info@monrenomatch.ca">info@monrenomatch.ca</a>.',
+      'privacy.note':'Cette politique est un point de départ et sera revue par un professionnel du droit avant un lancement à grande échelle. Dernière mise à jour : 2026.',
+      'terms.title':"Conditions d'utilisation",
+      'terms.h1':'Description du service',
+      'terms.p1':'MonRénoMatch est une plateforme de mise en relation entre des propriétaires ayant un projet de rénovation résidentielle et des entrepreneurs partenaires au Québec. Le service est gratuit pour les propriétaires.',
+      'terms.h2':'Aucune garantie de résultat',
+      'terms.p2':"MonRénoMatch met en relation les propriétaires avec des entrepreneurs, mais ne garantit pas qu'un entrepreneur sera disponible pour chaque projet, ni la qualité, le prix ou les résultats des travaux effectués par un entrepreneur partenaire.",
+      'terms.h3':'Responsabilités du propriétaire',
+      'terms.p3':"En soumettant le formulaire, vous confirmez que les renseignements fournis sont exacts. Toute entente conclue avec un entrepreneur relève uniquement de vous et de l'entrepreneur; MonRénoMatch n'est pas partie à ce contrat.",
+      'terms.h4':'Limitation de responsabilité',
+      'terms.p4':'MonRénoMatch agit uniquement comme intermédiaire de mise en relation et ne peut être tenu responsable des travaux effectués, des délais, ou de tout différend entre un propriétaire et un entrepreneur.',
+      'terms.h5':'Modifications',
+      'terms.p5':'Ces conditions peuvent être mises à jour périodiquement. La version en vigueur est toujours celle affichée sur cette page.',
+      'terms.h6':'Loi applicable',
+      'terms.p6':'Ces conditions sont régies par les lois applicables dans la province de Québec, Canada.',
+      'terms.note':'Ce document est un point de départ et sera revu par un professionnel du droit avant un lancement à grande échelle. Dernière mise à jour : 2026.',
+      'cookies.title':'Gestion des cookies',
+      'cookies.p1':"Ce site utilise des cookies essentiels au bon fonctionnement du site (par exemple, pour mémoriser votre choix de langue), ainsi que des cookies d'analyse pour comprendre comment le site est utilisé.",
+      'cookies.p2':"Les cookies essentiels ne nécessitent pas votre consentement. Les cookies d'analyse ou publicitaires, lorsqu'ils sont utilisés, requièrent votre consentement préalable, conformément à la Loi 25.",
+      'cookies.p3':'Vous pouvez désactiver les cookies en tout temps dans les paramètres de votre navigateur.'
     },
     en: {
       'nav.how':'How it works','nav.faq':'FAQ','nav.contractor':'Are you a contractor?','nav.cta':'Describe my project',
@@ -648,7 +832,7 @@
       's6.desc':'Project description','s6.descPh':'e.g. Redo the whole kitchen, including cabinets and countertop...',
       's6.name':'Full name','s6.namePh':'Your name','s6.phone':'Phone','s6.email':'Email',
       's6.pref':'How do you prefer to be contacted?',
-      's6.consent':'I agree that MonRénoMatch will share my details with a partner contractor matching my project, in accordance with the <a href="#" style="text-decoration:underline;">privacy policy</a>.',
+      's6.consent':'I agree that MonRénoMatch will share my details with a partner contractor matching my project, in accordance with the <a href="#" onclick="showPage(\'privacyView\'); return false;" style="text-decoration:underline;">privacy policy</a>.',
       'opt.kitchen':'Kitchen','opt.bath':'Bathroom','opt.basement':'Basement','opt.full':'Full renovation',
       'opt.addition':'Addition','opt.roof':'Roofing','opt.windows':'Windows and doors','opt.exterior':'Exterior','opt.other':'Other',
       'opt.yes':'Yes','opt.no':'No',
@@ -658,7 +842,51 @@
       'btn.continue':'Continue →','btn.back':'← Back','btn.submit':'Send my request',
       'thanks.title':'Thanks, your project was received.',
       'thanks.sub':"We're reviewing your request and looking for a professional suited to your project and area. Most homeowners are contacted within 48 hours.",
-      'thanks.home':'Back to home'
+      'thanks.home':'Back to home',
+      'page.back':'← Back to home',
+      'about.title':'About MonRénoMatch',
+      'about.p1':'MonRénoMatch is a Quebec platform that helps homeowners find a contractor suited to their residential renovation project.',
+      'about.p2':"We're a young startup based in Quebec. Our goal is simple: make it easier for homeowners to connect with serious contractors, without a complicated process.",
+      'about.p3':"The service is completely free for homeowners. It's our partner contractors who pay to work with us and receive qualified quote requests.",
+      'contact.title':'Contact',
+      'contact.p1':'Have a question, or are you a contractor looking to become a partner? Get in touch.',
+      'contact.emailLabel':'Email:',
+      'contact.p2':'We usually respond within 48 hours.',
+      'contact.contractorTitle':'Are you a contractor?',
+      'contact.contractorP':"We're looking for partner contractors in residential renovation across Quebec. Email us at the address above with your company name, service area and project types, and we'll be in touch.",
+      'privacy.title':'Privacy Policy',
+      'privacy.intro':"This policy explains what personal information MonRénoMatch collects, why, and what your rights are. It is written in accordance with Quebec's Law 25 on the protection of personal information.",
+      'privacy.h1':'Information collected',
+      'privacy.p1':'When you fill out our form, we collect: your name, phone number, email, city and postal code, as well as details of your renovation project (type, approximate budget, timeline, description).',
+      'privacy.h2':'Use of information',
+      'privacy.p2':"This information is used only to assess your project and connect you with a partner contractor suited to your area and needs. It is never sold to third parties for advertising purposes.",
+      'privacy.h3':'Sharing with partner contractors',
+      'privacy.p3':'Your contact details and project information may be shared with a partner contractor selected for your request, only after you have given explicit consent when submitting the form.',
+      'privacy.h4':'Data retention',
+      'privacy.p4':'Your information is kept only as long as necessary to provide the service, then deleted or anonymized once no longer needed for that purpose.',
+      'privacy.h5':'Your rights',
+      'privacy.p5':'You may at any time request access to, correction of, or deletion of your information. Any deletion request will be handled within a reasonable time, generally within 30 days.',
+      'privacy.h6':'Privacy officer',
+      'privacy.p6':'For any question or request regarding your personal information, contact our privacy officer at <a class="inline-link" href="mailto:info@monrenomatch.ca">info@monrenomatch.ca</a>.',
+      'privacy.note':'This policy is a starting point and will be reviewed by a legal professional before a large-scale launch. Last updated: 2026.',
+      'terms.title':'Terms of Use',
+      'terms.h1':'Service description',
+      'terms.p1':'MonRénoMatch is a platform connecting homeowners with a residential renovation project to partner contractors across Quebec. The service is free for homeowners.',
+      'terms.h2':'No guarantee of outcome',
+      'terms.p2':"MonRénoMatch connects homeowners with contractors, but does not guarantee that a contractor will be available for every project, nor the quality, price, or results of work performed by a partner contractor.",
+      'terms.h3':"Homeowner's responsibilities",
+      'terms.p3':'By submitting the form, you confirm that the information provided is accurate. Any agreement reached with a contractor is solely between you and the contractor; MonRénoMatch is not a party to that contract.',
+      'terms.h4':'Limitation of liability',
+      'terms.p4':'MonRénoMatch acts only as a matchmaking intermediary and cannot be held responsible for work performed, timelines, or any dispute between a homeowner and a contractor.',
+      'terms.h5':'Changes',
+      'terms.p5':'These terms may be updated periodically. The version in effect is always the one displayed on this page.',
+      'terms.h6':'Governing law',
+      'terms.p6':'These terms are governed by the laws applicable in the province of Quebec, Canada.',
+      'terms.note':'This document is a starting point and will be reviewed by a legal professional before a large-scale launch. Last updated: 2026.',
+      'cookies.title':'Cookie Settings',
+      'cookies.p1':'This site uses essential cookies for the site to function properly (for example, to remember your language choice), as well as analytics cookies to understand how the site is used.',
+      'cookies.p2':"Essential cookies do not require your consent. Analytics or advertising cookies, when used, require your prior consent, in accordance with Law 25.",
+      'cookies.p3':'You can disable cookies at any time in your browser settings.'
     }
   };
 
@@ -672,6 +900,10 @@
     document.getElementById('langBtnEn').classList.toggle('active', lang === 'en');
     document.getElementById('langBtnFrForm').classList.toggle('active', lang === 'fr');
     document.getElementById('langBtnEnForm').classList.toggle('active', lang === 'en');
+    ['About','Contact','Priv','Terms','Cookies'].forEach(suffix => {
+      document.getElementById('langBtnFr'+suffix).classList.toggle('active', lang === 'fr');
+      document.getElementById('langBtnEn'+suffix).classList.toggle('active', lang === 'en');
+    });
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       const val = translations[lang][key];
@@ -689,9 +921,20 @@
   let currentStep = 1;
   const totalSteps = 6;
 
+  function hideAllViews(){
+    ['homeView','formView','thanksView','aboutView','contactView','privacyView','termsView','cookiesView'].forEach(id => {
+      document.getElementById(id).style.display = 'none';
+    });
+  }
+
+  function showPage(id){
+    hideAllViews();
+    document.getElementById(id).style.display = 'block';
+    window.scrollTo(0,0);
+  }
+
   function goToForm(presetType){
-    document.getElementById('homeView').style.display = 'none';
-    document.getElementById('thanksView').style.display = 'none';
+    hideAllViews();
     document.getElementById('formView').style.display = 'block';
     window.scrollTo(0,0);
     if(presetType){
@@ -705,8 +948,7 @@
   }
 
   function goHome(){
-    document.getElementById('formView').style.display = 'none';
-    document.getElementById('thanksView').style.display = 'none';
+    hideAllViews();
     document.getElementById('homeView').style.display = 'block';
     window.scrollTo(0,0);
   }
