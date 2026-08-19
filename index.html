@@ -51,7 +51,7 @@
     border-bottom:1px solid var(--gris-300);
   }
   .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 24px;}
-  .logo{font-family:var(--font-display); font-size:1.35rem; font-weight:600; display:flex; align-items:center; gap:8px;}
+  .logo{font-family:var(--font-display); font-size:1.35rem; font-weight:600; display:flex; align-items:center; gap:8px; cursor:pointer;}
   .logo-mark{width:20px; height:20px; flex:none;}
   .nav-links{display:flex; align-items:center; gap:28px; font-size:0.92rem;}
   .nav-links a.entrepreneur-link{color:var(--ardoise-600); text-decoration:none;}
@@ -256,7 +256,7 @@
 <div id="homeView">
   <header class="site">
     <div class="nav wrap">
-      <div class="logo">
+      <div class="logo" onclick="goHome()">
         <svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         MonRénoMatch
       </div>
@@ -415,7 +415,7 @@
 
   <footer class="site">
     <div class="wrap footer-grid">
-      <div class="logo">
+      <div class="logo" onclick="goHome()">
         <svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         MonRénoMatch
       </div>
@@ -435,7 +435,7 @@
 <!-- ======================= ABOUT VIEW ======================= -->
 <div id="aboutView" style="display:none;">
   <header class="site"><div class="subpage-header wrap">
-    <div class="logo"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
+    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
     <div style="display:flex; align-items:center; gap:12px;">
       <div class="lang-toggle"><button id="langBtnFrAbout" onclick="setLang('fr')">FR</button><button id="langBtnEnAbout" onclick="setLang('en')">EN</button></div>
       <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
@@ -453,7 +453,7 @@
 <!-- ======================= CONTACT VIEW ======================= -->
 <div id="contactView" style="display:none;">
   <header class="site"><div class="subpage-header wrap">
-    <div class="logo"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
+    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
     <div style="display:flex; align-items:center; gap:12px;">
       <div class="lang-toggle"><button id="langBtnFrContact" onclick="setLang('fr')">FR</button><button id="langBtnEnContact" onclick="setLang('en')">EN</button></div>
       <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
@@ -473,7 +473,7 @@
 <!-- ======================= PRIVACY VIEW ======================= -->
 <div id="privacyView" style="display:none;">
   <header class="site"><div class="subpage-header wrap">
-    <div class="logo"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
+    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
     <div style="display:flex; align-items:center; gap:12px;">
       <div class="lang-toggle"><button id="langBtnFrPriv" onclick="setLang('fr')">FR</button><button id="langBtnEnPriv" onclick="setLang('en')">EN</button></div>
       <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
@@ -509,7 +509,7 @@
 <!-- ======================= TERMS VIEW ======================= -->
 <div id="termsView" style="display:none;">
   <header class="site"><div class="subpage-header wrap">
-    <div class="logo"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
+    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
     <div style="display:flex; align-items:center; gap:12px;">
       <div class="lang-toggle"><button id="langBtnFrTerms" onclick="setLang('fr')">FR</button><button id="langBtnEnTerms" onclick="setLang('en')">EN</button></div>
       <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
@@ -544,7 +544,7 @@
 <!-- ======================= COOKIES VIEW ======================= -->
 <div id="cookiesView" style="display:none;">
   <header class="site"><div class="subpage-header wrap">
-    <div class="logo"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
+    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
     <div style="display:flex; align-items:center; gap:12px;">
       <div class="lang-toggle"><button id="langBtnFrCookies" onclick="setLang('fr')">FR</button><button id="langBtnEnCookies" onclick="setLang('en')">EN</button></div>
       <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
@@ -562,7 +562,7 @@
 <!-- ======================= FORM VIEW ======================= -->
 <div id="formView">
   <div class="form-header">
-    <div class="logo" style="font-size:1.1rem;">
+    <div class="logo" onclick="goHome()" style="font-size:1.1rem;">
       <svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       MonRénoMatch
     </div>
