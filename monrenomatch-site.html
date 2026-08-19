@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MonRénoMatch — Votre projet de rénovation commence ici</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --ardoise-950:#151c24;
+    --ardoise-800:#26313d;
+    --ardoise-600:#4b5d6e;
+    --ardoise-300:#a9b7c2;
+    --brique-600:#b5533f;
+    --brique-700:#984431;
+    --brique-100:#f3e2dc;
+    --sauge-600:#5f7a5c;
+    --sauge-100:#e6ede4;
+    --creme-50:#faf7f2;
+    --creme-100:#f2ede4;
+    --blanc:#ffffff;
+    --gris-500:#6b7280;
+    --gris-300:#d9d4ca;
+    --radius:14px;
+    --font-display:'Fraunces', Georgia, serif;
+    --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    background:var(--creme-50);
+    color:var(--ardoise-950);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:var(--font-display); font-weight:600; margin:0; letter-spacing:-0.01em;}
+  p{margin:0; line-height:1.6;}
+  a{color:inherit;}
+  button{font-family:inherit; cursor:pointer;}
+  :focus-visible{outline:2px solid var(--brique-600); outline-offset:3px;}
+
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+  /* ---------- HEADER ---------- */
+  header.site{
+    position:sticky; top:0; z-index:40;
+    background:rgba(250,247,242,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--gris-300);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 24px;}
+  .logo{font-family:var(--font-display); font-size:1.35rem; font-weight:600; display:flex; align-items:center; gap:8px;}
+  .logo-mark{width:20px; height:20px; flex:none;}
+  .nav-links{display:flex; align-items:center; gap:28px; font-size:0.92rem;}
+  .nav-links a.entrepreneur-link{color:var(--ardoise-600); text-decoration:none;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:12px 22px; border-radius:999px; border:none;
+    font-size:0.95rem; font-weight:600; text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{background:var(--brique-600); color:var(--blanc);}
+  .btn-primary:hover{background:var(--brique-700); transform:translateY(-1px); box-shadow:0 8px 20px -8px rgba(181,83,63,0.55);}
+  .btn-ghost{background:transparent; color:var(--ardoise-950); border:1px solid var(--gris-300);}
+  .btn-ghost:hover{border-color:var(--ardoise-600);}
+  .btn-sm{padding:9px 16px; font-size:0.85rem;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:72px 0 56px;}
+  .hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;}
+  .eyebrow{
+    font-size:0.78rem; text-transform:uppercase; letter-spacing:0.12em; font-weight:600;
+    color:var(--brique-700); margin-bottom:14px; display:block;
+  }
+  .hero h1{font-size:3.1rem; line-height:1.08; max-width:11ch;}
+  .hero p.lede{margin-top:20px; font-size:1.15rem; color:var(--ardoise-600); max-width:42ch;}
+  .hero-cta{margin-top:32px; display:flex; align-items:center; gap:18px; flex-wrap:wrap;}
+  .hero-note{font-size:0.85rem; color:var(--gris-500);}
+  .hero-illustration{display:flex; justify-content:center;}
+
+  /* ---------- CATEGORIES ---------- */
+  .section{padding:64px 0;}
+  .section-head{max-width:52ch; margin-bottom:36px;}
+  .section-head .eyebrow{margin-bottom:10px;}
+  .section-head h2{font-size:2rem;}
+  .cat-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;}
+  .cat-card{
+    background:var(--blanc); border:1px solid var(--gris-300); border-radius:var(--radius);
+    padding:22px 18px; text-align:left; transition:border-color .15s, transform .15s;
+  }
+  .cat-card:hover{border-color:var(--brique-600); transform:translateY(-2px);}
+  .cat-card .cat-icon{width:32px; height:32px; margin-bottom:14px; color:var(--brique-600);}
+  .cat-card strong{display:block; font-size:1.02rem; margin-bottom:4px;}
+  .cat-card span{font-size:0.85rem; color:var(--gris-500);}
+
+  /* ---------- HOW IT WORKS ---------- */
+  .steps-3{display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:8px;}
+  .step-3 .num{
+    font-family:var(--font-display); font-size:0.95rem; color:var(--brique-600); font-weight:600;
+    border:1px solid var(--brique-600); width:34px; height:34px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; margin-bottom:16px;
+  }
+  .step-3 h3{font-size:1.1rem; margin-bottom:8px;}
+  .step-3 p{color:var(--ardoise-600); font-size:0.94rem;}
+
+  /* ---------- WHY ---------- */
+  .why-band{background:var(--ardoise-950); color:var(--creme-50);}
+  .why-band .section-head h2{color:var(--blanc);}
+  .why-band .eyebrow{color:#e0a08e;}
+  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+  .why-item h3{font-size:1rem; color:var(--blanc); margin-bottom:8px; font-family:var(--font-body); font-weight:600;}
+  .why-item p{font-size:0.88rem; color:var(--ardoise-300);}
+
+  /* ---------- FAQ ---------- */
+  .faq-item{border-bottom:1px solid var(--gris-300); padding:18px 0;}
+  .faq-q{
+    display:flex; justify-content:space-between; align-items:center; cursor:pointer;
+    font-weight:600; font-size:1rem;
+  }
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease; font-size:0.92rem; color:var(--ardoise-600);}
+  .faq-item.open .faq-a{max-height:200px; margin-top:12px;}
+  .faq-plus{transition:transform .2s ease; font-size:1.2rem; color:var(--brique-600);}
+  .faq-item.open .faq-plus{transform:rotate(45deg);}
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{
+    background:var(--brique-100); border-radius:24px; padding:52px 40px; text-align:center;
+    margin:0 24px;
+  }
+  .final-cta h2{font-size:1.8rem; margin-bottom:12px;}
+  .final-cta p{color:var(--ardoise-600); margin-bottom:26px;}
+  .legal-note{font-size:0.78rem; color:var(--gris-500); margin-top:18px;}
+
+  /* ---------- FOOTER ---------- */
+  footer.site{padding:48px 0 32px; border-top:1px solid var(--gris-300); margin-top:32px;}
+  .footer-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px;}
+  .footer-links{display:flex; gap:22px; flex-wrap:wrap; font-size:0.85rem; color:var(--gris-500);}
+  .footer-links a{text-decoration:none;}
+  .footer-links a:hover{color:var(--ardoise-950);}
+  .footer-bottom{margin-top:28px; font-size:0.78rem; color:var(--gris-500);}
+
+  /* ================= FORM VIEW ================= */
+  #formView{display:none; min-height:100vh; background:var(--creme-50);}
+  .form-header{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 24px; border-bottom:1px solid var(--gris-300);
+  }
+  .progress-wrap{max-width:520px; margin:0 auto; padding:0 24px;}
+  .progress-track{height:5px; background:var(--gris-300); border-radius:999px; margin:28px auto 6px; overflow:hidden;}
+  .progress-fill{height:100%; background:var(--brique-600); border-radius:999px; transition:width .3s ease; width:16.6%;}
+  .progress-label{font-size:0.78rem; color:var(--gris-500); text-align:right; margin-bottom:8px;}
+
+  .form-stage{max-width:560px; margin:32px auto 80px; padding:0 24px;}
+  .fstep{display:none; animation:fadein .25s ease;}
+  .fstep.active{display:block;}
+  @keyframes fadein{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+  .fstep h2{font-size:1.55rem; margin-bottom:8px;}
+  .fstep .fhint{color:var(--gris-500); font-size:0.92rem; margin-bottom:28px;}
+
+  .opt-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .opt-card{
+    border:1.5px solid var(--gris-300); border-radius:12px; padding:16px 14px; background:var(--blanc);
+    text-align:left; font-size:0.95rem; font-weight:500; transition:border-color .15s, background .15s;
+  }
+  .opt-card:hover{border-color:var(--brique-600);}
+  .opt-card.selected{border-color:var(--brique-600); background:var(--brique-100); font-weight:600;}
+
+  .opt-list{display:flex; flex-direction:column; gap:10px;}
+  .opt-row{
+    border:1.5px solid var(--gris-300); border-radius:12px; padding:14px 16px; background:var(--blanc);
+    text-align:left; font-size:0.98rem; font-weight:500; transition:border-color .15s, background .15s;
+  }
+  .opt-row:hover{border-color:var(--brique-600);}
+  .opt-row.selected{border-color:var(--brique-600); background:var(--brique-100); font-weight:600;}
+
+  label.flabel{display:block; font-size:0.88rem; font-weight:600; margin-bottom:6px; margin-top:18px;}
+  label.flabel:first-of-type{margin-top:0;}
+  input.finput, textarea.finput{
+    width:100%; padding:13px 14px; border-radius:10px; border:1.5px solid var(--gris-300);
+    font-family:inherit; font-size:0.98rem; background:var(--blanc);
+  }
+  input.finput:focus, textarea.finput:focus{border-color:var(--brique-600); outline:none;}
+  textarea.finput{min-height:110px; resize:vertical;}
+
+  .consent-row{display:flex; align-items:flex-start; gap:10px; margin-top:22px; font-size:0.85rem; color:var(--ardoise-600);}
+  .consent-row input{margin-top:3px; flex:none;}
+
+  .fnav{display:flex; justify-content:space-between; align-items:center; margin-top:32px;}
+  .flink-back{background:none; border:none; color:var(--gris-500); font-size:0.9rem; text-decoration:underline;}
+  .info-box{
+    background:var(--sauge-100); border-radius:10px; padding:14px 16px; font-size:0.86rem; color:var(--ardoise-800);
+    margin-top:16px; display:none;
+  }
+
+  /* thank you */
+  #thanksView{display:none; min-height:100vh; align-items:center; justify-content:center; flex-direction:column; text-align:center; padding:24px;}
+  #thanksView .check{
+    width:56px; height:56px; border-radius:50%; background:var(--sauge-600); color:#fff;
+    display:flex; align-items:center; justify-content:center; margin-bottom:22px; font-size:1.6rem;
+  }
+  #thanksView h1{font-size:2rem; max-width:16ch; margin-bottom:14px;}
+  #thanksView p{color:var(--ardoise-600); max-width:40ch; margin-bottom:28px;}
+  .admin-peek-link{margin-top:36px; font-size:0.78rem; color:var(--gris-500); text-decoration:underline; background:none; border:none;}
+
+  /* admin demo panel */
+  #adminPeek{display:none; max-width:640px; margin:24px auto; padding:0 24px 60px; text-align:left;}
+  #adminPeek .peek-card{background:var(--blanc); border:1px solid var(--gris-300); border-radius:12px; padding:20px;}
+  #adminPeek h3{font-size:1rem; margin-bottom:4px;}
+  #adminPeek .peek-note{font-size:0.78rem; color:var(--gris-500); margin-bottom:16px;}
+  .lead-row{border-top:1px solid var(--gris-300); padding:12px 0; font-size:0.85rem; display:flex; justify-content:space-between; gap:12px;}
+  .lead-row:first-of-type{border-top:none;}
+  .score-pill{font-weight:700; padding:2px 10px; border-radius:999px; font-size:0.78rem;}
+  .score-premium{background:#fde3d3; color:var(--brique-700);}
+  .score-qualifie{background:var(--sauge-100); color:var(--sauge-600);}
+  .score-moyen{background:#fff3cd; color:#8a6d1a;}
+  .score-faible{background:#f2d9d9; color:#a13f3f;}
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:2.3rem; max-width:none;}
+    .hero-illustration{order:-1;}
+    .cat-grid{grid-template-columns:1fr 1fr;}
+    .steps-3{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .nav-links{gap:14px;}
+    .opt-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ======================= HOME VIEW ======================= -->
+<div id="homeView">
+  <header class="site">
+    <div class="nav wrap">
+      <div class="logo">
+        <svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        MonRénoMatch
+      </div>
+      <div class="nav-links">
+        <a href="#comment-ca-marche">Comment ça marche</a>
+        <a href="#faq">FAQ</a>
+        <a class="entrepreneur-link" href="#">Vous êtes entrepreneur?</a>
+        <button class="btn btn-primary btn-sm" onclick="goToForm()">Décrire mon projet</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Rénovation résidentielle · Québec</span>
+        <h1>Votre projet de rénovation commence ici.</h1>
+        <p class="lede">Décrivez votre projet et découvrez des professionnels qui pourraient vous aider — gratuitement, sans engagement.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" onclick="goToForm()">Décrire mon projet →</button>
+          <span class="hero-note">2 minutes · aucune carte de crédit</span>
+        </div>
+      </div>
+      <div class="hero-illustration">
+        <!-- signature illustration: Montreal triplex with the iconic exterior staircase -->
+        <svg width="320" height="340" viewBox="0 0 320 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="40" y="60" width="240" height="240" rx="4" fill="#f2ede4" stroke="#26313d" stroke-width="2"/>
+          <line x1="40" y1="140" x2="280" y2="140" stroke="#26313d" stroke-width="1.4"/>
+          <line x1="40" y1="220" x2="280" y2="220" stroke="#26313d" stroke-width="1.4"/>
+          <rect x="60" y="80" width="40" height="40" fill="#fff" stroke="#26313d" stroke-width="1.4"/>
+          <rect x="140" y="80" width="40" height="40" fill="#fff" stroke="#26313d" stroke-width="1.4"/>
+          <rect x="220" y="80" width="40" height="40" fill="#fff" stroke="#26313d" stroke-width="1.4"/>
+          <rect x="60" y="160" width="40" height="40" fill="#fff" stroke="#26313d" stroke-width="1.4"/>
+          <rect x="220" y="160" width="40" height="40" fill="#fff" stroke="#26313d" stroke-width="1.4"/>
+          <rect x="130" y="240" width="60" height="60" fill="#b5533f" stroke="#26313d" stroke-width="1.4"/>
+          <!-- exterior spiral staircase, Montreal-style -->
+          <g stroke="#b5533f" stroke-width="2.4" fill="none" stroke-linecap="round">
+            <path d="M300 300 C300 260 265 260 265 220 C265 180 300 180 300 140"/>
+            <path d="M292 296 L308 296 M292 270 L308 270 M292 244 L308 244 M292 218 L308 218 M292 192 L308 192 M292 166 L308 166 M292 144 L308 144" stroke-width="1.6"/>
+          </g>
+          <path d="M20 60 L160 6 L300 60" stroke="#26313d" stroke-width="2" fill="none" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="comment-ca-marche">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Le processus</span>
+        <h2>Comment ça fonctionne</h2>
+      </div>
+      <div class="steps-3">
+        <div class="step-3">
+          <div class="num">1</div>
+          <h3>Décrivez votre projet</h3>
+          <p>Quelques questions simples sur votre projet, votre budget et votre échéancier — deux minutes suffisent.</p>
+        </div>
+        <div class="step-3">
+          <div class="num">2</div>
+          <h3>On trouve le bon match</h3>
+          <p>Votre projet est analysé et associé à un professionnel adapté à votre région et à vos besoins.</p>
+        </div>
+        <div class="step-3">
+          <div class="num">3</div>
+          <h3>Un professionnel vous contacte</h3>
+          <p>Vous êtes contacté directement pour discuter de votre projet, sans obligation de votre part.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Par où commencer</span>
+        <h2>Quel type de projet avez-vous en tête?</h2>
+      </div>
+      <div class="cat-grid">
+        <button class="cat-card" onclick="goToForm('Cuisine')">
+          <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 3v18M4 8h4M20 3v18M4 3h4v5H4zM14 3v8a3 3 0 006 0V3M17 11v10"/></svg>
+          <strong>Cuisine</strong>
+          <span>Armoires, îlot, électroménagers</span>
+        </button>
+        <button class="cat-card" onclick="goToForm('Salle de bain')">
+          <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16v3a4 4 0 01-4 4H8a4 4 0 01-4-4v-3zM4 12V6a2 2 0 012-2h1v3M8 21v2M16 21v2"/></svg>
+          <strong>Salle de bain</strong>
+          <span>Douche, bain, céramique</span>
+        </button>
+        <button class="cat-card" onclick="goToForm('Sous-sol')">
+          <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10l9-7 9 7M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg>
+          <strong>Sous-sol</strong>
+          <span>Aménagement, finition</span>
+        </button>
+        <button class="cat-card" onclick="goToForm('Autre')">
+          <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+          <strong>Autre projet</strong>
+          <span>Toiture, extérieur, agrandissement</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section why-band">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Pourquoi MonRénoMatch</span>
+        <h2>Pensé pour les propriétaires québécois</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item"><h3>Gratuit</h3><p>Le service est entièrement gratuit pour vous, sans aucune obligation.</p></div>
+        <div class="why-item"><h3>Sans engagement</h3><p>Vous décidez si vous voulez donner suite à la mise en relation.</p></div>
+        <div class="why-item"><h3>Professionnels ciblés</h3><p>Nous cherchons un professionnel adapté à votre région et votre type de projet.</p></div>
+        <div class="why-item"><h3>Réponse rapide</h3><p>La majorité des demandes sont traitées en moins de 48 heures.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap" style="max-width:760px;">
+      <div class="section-head">
+        <span class="eyebrow">Questions fréquentes</span>
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Est-ce que ça me coûte quelque chose? <span class="faq-plus">+</span></div>
+        <div class="faq-a">Non. Le service est entièrement gratuit pour les propriétaires. Ce sont les entrepreneurs partenaires qui font affaire avec nous.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Suis-je obligé de donner suite? <span class="faq-plus">+</span></div>
+        <div class="faq-a">Non, il n'y a aucune obligation. Vous êtes libre de discuter avec le professionnel ou non.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Que fait-on de mes renseignements? <span class="faq-plus">+</span></div>
+        <div class="faq-a">Vos coordonnées sont utilisées uniquement pour vous mettre en relation avec un professionnel, selon les termes de notre politique de confidentialité et votre consentement explicite.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Combien de temps avant d'être contacté? <span class="faq-plus">+</span></div>
+        <div class="faq-a">La majorité des propriétaires sont contactés en moins de 48 heures.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="final-cta">
+      <h2>Prêt à démarrer votre projet?</h2>
+      <p>Ça prend deux minutes, et c'est gratuit.</p>
+      <button class="btn btn-primary" onclick="goToForm()">Décrire mon projet →</button>
+      <p class="legal-note">Vos renseignements sont protégés — voir notre politique de confidentialité.</p>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap footer-grid">
+      <div class="logo">
+        <svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        MonRénoMatch
+      </div>
+      <div class="footer-links">
+        <a href="#">À propos</a>
+        <a href="#">Contact</a>
+        <a href="#">Pour entrepreneurs</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Conditions d'utilisation</a>
+        <a href="#">Gestion des cookies</a>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">© 2026 MonRénoMatch. Tous droits réservés.</div>
+  </footer>
+</div>
+
+<!-- ======================= FORM VIEW ======================= -->
+<div id="formView">
+  <div class="form-header">
+    <div class="logo" style="font-size:1.1rem;">
+      <svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      MonRénoMatch
+    </div>
+    <button class="btn btn-ghost btn-sm" onclick="goHome()">Quitter</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-label" id="progressLabel">Étape 1 sur 6</div>
+  </div>
+
+  <div class="form-stage">
+
+    <!-- STEP 1 -->
+    <div class="fstep active" data-step="1">
+      <h2>Quel type de projet voulez-vous réaliser?</h2>
+      <p class="fhint">Choisissez l'option qui correspond le mieux à votre projet.</p>
+      <div class="opt-grid" id="typeGrid">
+        <button class="opt-card" data-value="Cuisine" onclick="selectOpt(this,'type_projet')">Cuisine</button>
+        <button class="opt-card" data-value="Salle de bain" onclick="selectOpt(this,'type_projet')">Salle de bain</button>
+        <button class="opt-card" data-value="Sous-sol" onclick="selectOpt(this,'type_projet')">Sous-sol</button>
+        <button class="opt-card" data-value="Rénovation complète" onclick="selectOpt(this,'type_projet')">Rénovation complète</button>
+        <button class="opt-card" data-value="Agrandissement" onclick="selectOpt(this,'type_projet')">Agrandissement</button>
+        <button class="opt-card" data-value="Toiture" onclick="selectOpt(this,'type_projet')">Toiture</button>
+        <button class="opt-card" data-value="Fenêtres et portes" onclick="selectOpt(this,'type_projet')">Fenêtres et portes</button>
+        <button class="opt-card" data-value="Extérieur" onclick="selectOpt(this,'type_projet')">Extérieur</button>
+        <button class="opt-card" data-value="Autre" onclick="selectOpt(this,'type_projet')">Autre</button>
+      </div>
+      <div class="fnav"><span></span><button class="btn btn-primary" onclick="nextStep(1)">Continuer →</button></div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="fstep" data-step="2">
+      <h2>Où se trouve votre projet?</h2>
+      <p class="fhint">Ça nous aide à trouver un professionnel proche de chez vous.</p>
+      <label class="flabel">Ville</label>
+      <input class="finput" id="f_ville" type="text" placeholder="ex. Laval">
+      <label class="flabel">Code postal</label>
+      <input class="finput" id="f_cp" type="text" placeholder="ex. H7A 1A1">
+      <div class="fnav"><button class="flink-back" onclick="prevStep(2)">← Retour</button><button class="btn btn-primary" onclick="nextStep(2)">Continuer →</button></div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="fstep" data-step="3">
+      <h2>Êtes-vous propriétaire du bâtiment?</h2>
+      <p class="fhint"></p>
+      <div class="opt-grid">
+        <button class="opt-card" data-value="Oui" onclick="selectOpt(this,'est_proprietaire'); showOwnerInfo(false)">Oui</button>
+        <button class="opt-card" data-value="Non" onclick="selectOpt(this,'est_proprietaire'); showOwnerInfo(true)">Non</button>
+      </div>
+      <div class="info-box" id="ownerInfoBox">Certains services peuvent ne pas être disponibles si vous n'êtes pas propriétaire — nous transmettons tout de même votre projet lorsque c'est pertinent.</div>
+      <div class="fnav"><button class="flink-back" onclick="prevStep(3)">← Retour</button><button class="btn btn-primary" onclick="nextStep(3)">Continuer →</button></div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="fstep" data-step="4">
+      <h2>Quel est votre budget approximatif?</h2>
+      <p class="fhint">Une estimation suffit — rien n'est final.</p>
+      <div class="opt-list">
+        <button class="opt-row" data-value="Moins de 5 000 $" onclick="selectOpt(this,'budget_tranche')">Moins de 5 000 $</button>
+        <button class="opt-row" data-value="5 000–10 000 $" onclick="selectOpt(this,'budget_tranche')">5 000–10 000 $</button>
+        <button class="opt-row" data-value="10 000–25 000 $" onclick="selectOpt(this,'budget_tranche')">10 000–25 000 $</button>
+        <button class="opt-row" data-value="25 000–50 000 $" onclick="selectOpt(this,'budget_tranche')">25 000–50 000 $</button>
+        <button class="opt-row" data-value="50 000–100 000 $" onclick="selectOpt(this,'budget_tranche')">50 000–100 000 $</button>
+        <button class="opt-row" data-value="100 000 $+" onclick="selectOpt(this,'budget_tranche')">100 000 $+</button>
+      </div>
+      <div class="fnav"><button class="flink-back" onclick="prevStep(4)">← Retour</button><button class="btn btn-primary" onclick="nextStep(4)">Continuer →</button></div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="fstep" data-step="5">
+      <h2>Quand souhaitez-vous commencer?</h2>
+      <p class="fhint"></p>
+      <div class="opt-list">
+        <button class="opt-row" data-value="Dès que possible" onclick="selectOpt(this,'echeancier')">Dès que possible</button>
+        <button class="opt-row" data-value="1–3 mois" onclick="selectOpt(this,'echeancier')">1–3 mois</button>
+        <button class="opt-row" data-value="3–6 mois" onclick="selectOpt(this,'echeancier')">3–6 mois</button>
+        <button class="opt-row" data-value="6–12 mois" onclick="selectOpt(this,'echeancier')">6–12 mois</button>
+        <button class="opt-row" data-value="Je ne sais pas encore" onclick="selectOpt(this,'echeancier')">Je ne sais pas encore</button>
+      </div>
+      <div class="fnav"><button class="flink-back" onclick="prevStep(5)">← Retour</button><button class="btn btn-primary" onclick="nextStep(5)">Continuer →</button></div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="fstep" data-step="6">
+      <h2>Parlez-nous de votre projet</h2>
+      <p class="fhint">Plus vous donnez de détails, mieux nous pouvons vous orienter.</p>
+      <label class="flabel">Description du projet</label>
+      <textarea class="finput" id="f_description" placeholder="ex. Refaire la cuisine au complet, incluant les armoires et le comptoir..."></textarea>
+      <label class="flabel">Nom complet</label>
+      <input class="finput" id="f_nom" type="text" placeholder="Votre nom">
+      <label class="flabel">Téléphone</label>
+      <input class="finput" id="f_telephone" type="tel" placeholder="ex. 514 555-1234">
+      <label class="flabel">Courriel</label>
+      <input class="finput" id="f_email" type="email" placeholder="vous@courriel.com">
+      <label class="flabel">Comment préférez-vous être contacté?</label>
+      <div class="opt-grid" style="grid-template-columns:1fr 1fr 1fr;">
+        <button class="opt-card" data-value="Téléphone" onclick="selectOpt(this,'pref_communication')">Téléphone</button>
+        <button class="opt-card" data-value="Courriel" onclick="selectOpt(this,'pref_communication')">Courriel</button>
+        <button class="opt-card" data-value="Texto" onclick="selectOpt(this,'pref_communication')">Texto</button>
+      </div>
+      <div class="consent-row">
+        <input type="checkbox" id="f_consent">
+        <label for="f_consent">J'accepte que MonRénoMatch partage mes coordonnées avec un entrepreneur partenaire correspondant à mon projet, conformément à la <a href="#" style="text-decoration:underline;">politique de confidentialité</a>.</label>
+      </div>
+      <div class="fnav"><button class="flink-back" onclick="prevStep(6)">← Retour</button><button class="btn btn-primary" id="submitBtn" onclick="submitForm()">Envoyer ma demande</button></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================= THANK YOU VIEW ======================= -->
+<div id="thanksView">
+  <div class="check">✓</div>
+  <h1>Merci, votre projet a été reçu.</h1>
+  <p>Nous analysons votre demande et cherchons un professionnel adapté à votre projet et votre région. La majorité des propriétaires sont contactés en moins de 48 heures.</p>
+  <button class="btn btn-primary" onclick="goHome()">Retour à l'accueil</button>
+</div>
+
+<script>
+  // Connexion à la base de données Supabase (clé publique — sans danger dans le navigateur, protégée par RLS)
+  const SUPABASE_URL = 'https://noochmyvtnxuvdrqqrud.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_ZAnzdtzcEI2_mskcAPJ9fw_DzlOdOkL';
+
+  let formData = {};
+  let currentStep = 1;
+  const totalSteps = 6;
+
+  function goToForm(presetType){
+    document.getElementById('homeView').style.display = 'none';
+    document.getElementById('thanksView').style.display = 'none';
+    document.getElementById('formView').style.display = 'block';
+    window.scrollTo(0,0);
+    if(presetType){
+      formData.type_projet = presetType;
+      const cards = document.querySelectorAll('#typeGrid .opt-card');
+      cards.forEach(c => c.classList.toggle('selected', c.dataset.value === presetType));
+      goToStep(2);
+    } else {
+      goToStep(1);
+    }
+  }
+
+  function goHome(){
+    document.getElementById('formView').style.display = 'none';
+    document.getElementById('thanksView').style.display = 'none';
+    document.getElementById('homeView').style.display = 'block';
+    window.scrollTo(0,0);
+  }
+
+  function goToStep(n){
+    currentStep = n;
+    document.querySelectorAll('.fstep').forEach(el => el.classList.toggle('active', Number(el.dataset.step) === n));
+    document.getElementById('progressFill').style.width = (n/totalSteps*100) + '%';
+    document.getElementById('progressLabel').textContent = 'Étape ' + n + ' sur ' + totalSteps;
+    window.scrollTo(0,0);
+  }
+
+  function selectOpt(btn, field){
+    const group = btn.parentElement.querySelectorAll('.opt-card, .opt-row');
+    group.forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    formData[field] = btn.dataset.value;
+  }
+
+  function showOwnerInfo(show){
+    document.getElementById('ownerInfoBox').style.display = show ? 'block' : 'none';
+  }
+
+  function nextStep(step){
+    if(step === 2){
+      formData.ville = document.getElementById('f_ville').value.trim();
+      formData.code_postal = document.getElementById('f_cp').value.trim();
+      if(!formData.ville){ alert('Merci d\'indiquer votre ville.'); return; }
+    }
+    if(step === 1 && !formData.type_projet){ alert('Merci de choisir un type de projet.'); return; }
+    if(step === 3 && !formData.est_proprietaire){ alert('Merci de répondre à cette question.'); return; }
+    if(step === 4 && !formData.budget_tranche){ alert('Merci de choisir une tranche de budget.'); return; }
+    if(step === 5 && !formData.echeancier){ alert('Merci de choisir un échéancier.'); return; }
+    goToStep(step+1);
+  }
+
+  function prevStep(step){ goToStep(step-1); }
+
+  function computeScore(d){
+    let score = 50;
+    score += (d.est_proprietaire === 'Oui') ? 15 : -20;
+    const budgetPoints = {
+      'Moins de 5 000 $':0, '5 000–10 000 $':3, '10 000–25 000 $':8,
+      '25 000–50 000 $':10, '50 000–100 000 $':10, '100 000 $+':10
+    };
+    score += budgetPoints[d.budget_tranche] || 0;
+    const wordCount = (d.description||'').trim().split(/\s+/).filter(Boolean).length;
+    score += (d.type_projet !== 'Autre' && wordCount > 30) ? 10 : 0;
+    const echeancierPoints = {
+      'Dès que possible':15, '1–3 mois':12, '3–6 mois':5, '6–12 mois':0, 'Je ne sais pas encore':-5
+    };
+    score += echeancierPoints[d.echeancier] || 0;
+    const phoneValid = /\d{3}.*\d{3}.*\d{4}/.test(d.telephone||'');
+    score += phoneValid ? 10 : -30;
+    const emailValid = /\S+@\S+\.\S+/.test(d.email||'');
+    score += emailValid ? 5 : -30;
+    score += wordCount > 30 ? 10 : (wordCount < 10 ? -10 : 0);
+    score += ['Cuisine','Salle de bain','Sous-sol'].includes(d.type_projet) ? 10 : 0;
+    return Math.max(0, Math.min(100, score));
+  }
+
+  function categoryFor(score){
+    if(score >= 80) return {label:'🔥 Premium', cls:'score-premium'};
+    if(score >= 60) return {label:'🟢 Qualifié', cls:'score-qualifie'};
+    if(score >= 40) return {label:'🟡 Moyen', cls:'score-moyen'};
+    return {label:'🔴 Faible', cls:'score-faible'};
+  }
+
+  async function submitForm(){
+    formData.description = document.getElementById('f_description').value.trim();
+    formData.nom = document.getElementById('f_nom').value.trim();
+    formData.telephone = document.getElementById('f_telephone').value.trim();
+    formData.email = document.getElementById('f_email').value.trim();
+    const consent = document.getElementById('f_consent').checked;
+
+    if(!formData.nom || !formData.telephone || !formData.email){
+      alert('Merci de remplir votre nom, téléphone et courriel.'); return;
+    }
+    if(!consent){
+      alert('Merci de cocher la case de consentement pour continuer.'); return;
+    }
+
+    const score = computeScore(formData);
+    const cat = categoryFor(score);
+
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi en cours...';
+
+    try{
+      await fetch(SUPABASE_URL + '/rest/v1/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_KEY,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          type_projet: formData.type_projet,
+          ville: formData.ville,
+          code_postal: formData.code_postal,
+          est_proprietaire: formData.est_proprietaire,
+          budget_tranche: formData.budget_tranche,
+          echeancier: formData.echeancier,
+          description: formData.description,
+          nom: formData.nom,
+          telephone: formData.telephone,
+          email: formData.email,
+          pref_communication: formData.pref_communication,
+          score: score,
+          categorie: cat.label,
+          source: 'site_direct'
+        })
+      });
+    }catch(e){ console.warn('Erreur d\'envoi vers Supabase:', e); }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Envoyer ma demande';
+    document.getElementById('formView').style.display = 'none';
+    document.getElementById('thanksView').style.display = 'flex';
+    window.scrollTo(0,0);
+  }
+
+  function toggleFaq(el){
+    el.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
