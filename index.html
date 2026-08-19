@@ -613,7 +613,7 @@
 
   <div class="progress-wrap">
     <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-    <div class="progress-label" id="progressLabel">Étape 1 sur 6</div>
+    <div class="progress-label" id="progressLabel">Étape 1 sur 7</div>
   </div>
 
   <div class="form-stage">
@@ -659,8 +659,26 @@
       <div class="fnav"><button class="flink-back" onclick="prevStep(3)" data-i18n="btn.back">← Retour</button><button class="btn btn-primary" onclick="nextStep(3)" data-i18n="btn.continue">Continuer →</button></div>
     </div>
 
-    <!-- STEP 4 -->
+    <!-- STEP 4 (BANT: authority / readiness) -->
     <div class="fstep" data-step="4">
+      <h2 data-i18n="s4b.title">Encore deux petites questions</h2>
+      <p class="fhint" data-i18n="s4b.hint">Ça nous aide à mieux orienter votre demande.</p>
+      <label class="flabel" data-i18n="s4b.q1">Avez-vous déjà obtenu d'autres soumissions pour ce projet?</label>
+      <div class="opt-grid">
+        <button class="opt-card" data-value="Oui" onclick="selectOpt(this,'autres_soumissions')" data-i18n="opt.yes">Oui</button>
+        <button class="opt-card" data-value="Non" onclick="selectOpt(this,'autres_soumissions')" data-i18n="opt.no">Non</button>
+      </div>
+      <label class="flabel" data-i18n="s4b.q2">Êtes-vous prêt à démarrer dès qu'un professionnel vous convient?</label>
+      <div class="opt-list">
+        <button class="opt-row" data-value="Oui" onclick="selectOpt(this,'pret_a_demarrer')" data-i18n="opt.readyYes">Oui, je suis prêt</button>
+        <button class="opt-row" data-value="Bientôt" onclick="selectOpt(this,'pret_a_demarrer')" data-i18n="opt.readySoon">Bientôt, mais pas immédiatement</button>
+        <button class="opt-row" data-value="Je magasine encore" onclick="selectOpt(this,'pret_a_demarrer')" data-i18n="opt.readyShopping">Je magasine encore les options</button>
+      </div>
+      <div class="fnav"><button class="flink-back" onclick="prevStep(4)" data-i18n="btn.back">← Retour</button><button class="btn btn-primary" onclick="nextStep(4)" data-i18n="btn.continue">Continuer →</button></div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="fstep" data-step="5">
       <h2 data-i18n="s4.title">Quel est votre budget approximatif?</h2>
       <p class="fhint" data-i18n="s4.hint">Une estimation suffit — rien n'est final.</p>
       <div class="opt-list">
@@ -671,11 +689,11 @@
         <button class="opt-row" data-value="50 000–100 000 $" onclick="selectOpt(this,'budget_tranche')" data-i18n="opt.b5">50 000–100 000 $</button>
         <button class="opt-row" data-value="100 000 $+" onclick="selectOpt(this,'budget_tranche')" data-i18n="opt.b6">100 000 $+</button>
       </div>
-      <div class="fnav"><button class="flink-back" onclick="prevStep(4)" data-i18n="btn.back">← Retour</button><button class="btn btn-primary" onclick="nextStep(4)" data-i18n="btn.continue">Continuer →</button></div>
+      <div class="fnav"><button class="flink-back" onclick="prevStep(5)" data-i18n="btn.back">← Retour</button><button class="btn btn-primary" onclick="nextStep(5)" data-i18n="btn.continue">Continuer →</button></div>
     </div>
 
-    <!-- STEP 5 -->
-    <div class="fstep" data-step="5">
+    <!-- STEP 6 -->
+    <div class="fstep" data-step="6">
       <h2 data-i18n="s5.title">Quand souhaitez-vous commencer?</h2>
       <p class="fhint"></p>
       <div class="opt-list">
@@ -685,11 +703,11 @@
         <button class="opt-row" data-value="6–12 mois" onclick="selectOpt(this,'echeancier')" data-i18n="opt.e4">6–12 mois</button>
         <button class="opt-row" data-value="Je ne sais pas encore" onclick="selectOpt(this,'echeancier')" data-i18n="opt.e5">Je ne sais pas encore</button>
       </div>
-      <div class="fnav"><button class="flink-back" onclick="prevStep(5)" data-i18n="btn.back">← Retour</button><button class="btn btn-primary" onclick="nextStep(5)" data-i18n="btn.continue">Continuer →</button></div>
+      <div class="fnav"><button class="flink-back" onclick="prevStep(6)" data-i18n="btn.back">← Retour</button><button class="btn btn-primary" onclick="nextStep(6)" data-i18n="btn.continue">Continuer →</button></div>
     </div>
 
-    <!-- STEP 6 -->
-    <div class="fstep" data-step="6">
+    <!-- STEP 7 -->
+    <div class="fstep" data-step="7">
       <h2 data-i18n="s6.title">Parlez-nous de votre projet</h2>
       <p class="fhint" data-i18n="s6.hint">Plus vous donnez de détails, mieux nous pouvons vous orienter.</p>
       <label class="flabel" data-i18n="s6.desc">Description du projet</label>
@@ -710,7 +728,7 @@
         <input type="checkbox" id="f_consent">
         <label for="f_consent" data-i18n="s6.consent">J'accepte que MonRénoMatch partage mes coordonnées avec un entrepreneur partenaire correspondant à mon projet, conformément à la <a href="#" style="text-decoration:underline;">politique de confidentialité</a>.</label>
       </div>
-      <div class="fnav"><button class="flink-back" onclick="prevStep(6)" data-i18n="btn.back">← Retour</button><button class="btn btn-primary" id="submitBtn" onclick="submitForm()" data-i18n="btn.submit">Envoyer ma demande</button></div>
+      <div class="fnav"><button class="flink-back" onclick="prevStep(7)" data-i18n="btn.back">← Retour</button><button class="btn btn-primary" id="submitBtn" onclick="submitForm()" data-i18n="btn.submit">Envoyer ma demande</button></div>
     </div>
 
   </div>
@@ -766,6 +784,9 @@
       's3.title':'Êtes-vous propriétaire du bâtiment?',
       's3.info':"Certains services peuvent ne pas être disponibles si vous n'êtes pas propriétaire — nous transmettons tout de même votre projet lorsque c'est pertinent.",
       's4.title':'Quel est votre budget approximatif?','s4.hint':"Une estimation suffit — rien n'est final.",
+      's4b.title':'Encore deux petites questions','s4b.hint':'Ça nous aide à mieux orienter votre demande.',
+      's4b.q1':"Avez-vous déjà obtenu d'autres soumissions pour ce projet?",
+      's4b.q2':'Êtes-vous prêt à démarrer dès qu\'un professionnel vous convient?',
       's5.title':'Quand souhaitez-vous commencer?',
       's6.title':'Parlez-nous de votre projet','s6.hint':'Plus vous donnez de détails, mieux nous pouvons vous orienter.',
       's6.desc':'Description du projet','s6.descPh':'ex. Refaire la cuisine au complet, incluant les armoires et le comptoir...',
@@ -778,6 +799,7 @@
       'opt.b1':'Moins de 5 000 $','opt.b2':'5 000–10 000 $','opt.b3':'10 000–25 000 $','opt.b4':'25 000–50 000 $','opt.b5':'50 000–100 000 $','opt.b6':'100 000 $+',
       'opt.e1':'Dès que possible','opt.e2':'1–3 mois','opt.e3':'3–6 mois','opt.e4':'6–12 mois','opt.e5':'Je ne sais pas encore',
       'opt.phone':'Téléphone','opt.email':'Courriel','opt.text':'Texto',
+      'opt.readyYes':'Oui, je suis prêt','opt.readySoon':'Bientôt, mais pas immédiatement','opt.readyShopping':'Je magasine encore les options',
       'btn.continue':'Continuer →','btn.back':'← Retour','btn.submit':'Envoyer ma demande',
       'thanks.title':'Merci, votre projet a été reçu.',
       'thanks.sub':'Nous analysons votre demande et cherchons un professionnel adapté à votre projet et votre région. La majorité des propriétaires sont contactés en moins de 48 heures.',
@@ -863,6 +885,9 @@
       's3.title':'Do you own the building?',
       's3.info':"Some services may not be available if you don't own the property — we still forward your project when relevant.",
       's4.title':'What is your approximate budget?','s4.hint':'An estimate is enough — nothing is final.',
+      's4b.title':'Two more quick questions','s4b.hint':'This helps us better direct your request.',
+      's4b.q1':'Have you already gotten other quotes for this project?',
+      's4b.q2':'Are you ready to start as soon as a professional is a good fit?',
       's5.title':'When do you want to start?',
       's6.title':'Tell us about your project','s6.hint':'The more details you give, the better we can help.',
       's6.desc':'Project description','s6.descPh':'e.g. Redo the whole kitchen, including cabinets and countertop...',
@@ -875,6 +900,7 @@
       'opt.b1':'Under $5,000','opt.b2':'$5,000–10,000','opt.b3':'$10,000–25,000','opt.b4':'$25,000–50,000','opt.b5':'$50,000–100,000','opt.b6':'$100,000+',
       'opt.e1':'As soon as possible','opt.e2':'1–3 months','opt.e3':'3–6 months','opt.e4':'6–12 months','opt.e5':"I don't know yet",
       'opt.phone':'Phone','opt.email':'Email','opt.text':'Text message',
+      'opt.readyYes':"Yes, I'm ready",'opt.readySoon':'Soon, but not immediately','opt.readyShopping':'Still comparing options',
       'btn.continue':'Continue →','btn.back':'← Back','btn.submit':'Send my request',
       'thanks.title':'Thanks, your project was received.',
       'thanks.sub':"We're reviewing your request and looking for a professional suited to your project and area. Most homeowners are contacted within 48 hours.",
@@ -950,12 +976,12 @@
       const val = translations[lang][key];
       if(val !== undefined) el.setAttribute('placeholder', val);
     });
-    document.getElementById('progressLabel').textContent = (lang === 'fr' ? 'Étape ' : 'Step ') + currentStep + (lang === 'fr' ? ' sur 6' : ' of 6');
+    document.getElementById('progressLabel').textContent = (lang === 'fr' ? 'Étape ' : 'Step ') + currentStep + (lang === 'fr' ? ' sur 7' : ' of 7');
   }
 
   let formData = {};
   let currentStep = 1;
-  const totalSteps = 6;
+  const totalSteps = 7;
 
   function hideAllViews(){
     ['homeView','formView','thanksView','aboutView','contactView','privacyView','termsView','cookiesView'].forEach(id => {
@@ -993,7 +1019,7 @@
     currentStep = n;
     document.querySelectorAll('.fstep').forEach(el => el.classList.toggle('active', Number(el.dataset.step) === n));
     document.getElementById('progressFill').style.width = (n/totalSteps*100) + '%';
-    document.getElementById('progressLabel').textContent = (currentLang === 'fr' ? 'Étape ' : 'Step ') + n + (currentLang === 'fr' ? ' sur 6' : ' of 6');
+    document.getElementById('progressLabel').textContent = (currentLang === 'fr' ? 'Étape ' : 'Step ') + n + (currentLang === 'fr' ? ' sur 7' : ' of 7');
     window.scrollTo(0,0);
   }
 
@@ -1010,8 +1036,8 @@
 
   function nextStep(step){
     const msgs = currentLang === 'fr'
-      ? {city:"Merci d'indiquer votre ville.", type:'Merci de choisir un type de projet.', owner:'Merci de répondre à cette question.', budget:'Merci de choisir une tranche de budget.', timing:'Merci de choisir un échéancier.'}
-      : {city:'Please enter your city.', type:'Please choose a project type.', owner:'Please answer this question.', budget:'Please choose a budget range.', timing:'Please choose a timeline.'};
+      ? {city:"Merci d'indiquer votre ville.", type:'Merci de choisir un type de projet.', owner:'Merci de répondre à cette question.', budget:'Merci de choisir une tranche de budget.', timing:'Merci de choisir un échéancier.', bant:'Merci de répondre aux deux questions.'}
+      : {city:'Please enter your city.', type:'Please choose a project type.', owner:'Please answer this question.', budget:'Please choose a budget range.', timing:'Please choose a timeline.', bant:'Please answer both questions.'};
     if(step === 2){
       formData.ville = document.getElementById('f_ville').value.trim();
       formData.code_postal = document.getElementById('f_cp').value.trim();
@@ -1019,8 +1045,9 @@
     }
     if(step === 1 && !formData.type_projet){ alert(msgs.type); return; }
     if(step === 3 && !formData.est_proprietaire){ alert(msgs.owner); return; }
-    if(step === 4 && !formData.budget_tranche){ alert(msgs.budget); return; }
-    if(step === 5 && !formData.echeancier){ alert(msgs.timing); return; }
+    if(step === 4 && (!formData.autres_soumissions || !formData.pret_a_demarrer)){ alert(msgs.bant); return; }
+    if(step === 5 && !formData.budget_tranche){ alert(msgs.budget); return; }
+    if(step === 6 && !formData.echeancier){ alert(msgs.timing); return; }
     goToStep(step+1);
   }
 
@@ -1046,6 +1073,9 @@
     score += emailValid ? 5 : -30;
     score += wordCount > 30 ? 10 : (wordCount < 10 ? -10 : 0);
     score += ['Cuisine','Salle de bain','Sous-sol'].includes(d.type_projet) ? 10 : 0;
+    score += (d.autres_soumissions === 'Oui') ? 8 : 0;
+    const readinessPoints = { 'Oui':15, 'Bientôt':5, 'Je magasine encore':-15 };
+    score += readinessPoints[d.pret_a_demarrer] || 0;
     return Math.max(0, Math.min(100, score));
   }
 
@@ -1098,6 +1128,8 @@
           telephone: formData.telephone,
           email: formData.email,
           pref_communication: formData.pref_communication,
+          autres_soumissions: formData.autres_soumissions,
+          pret_a_demarrer: formData.pret_a_demarrer,
           score: score,
           categorie: cat.label,
           source: 'site_direct'
