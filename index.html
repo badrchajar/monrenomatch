@@ -128,6 +128,7 @@
     padding:22px 18px; text-align:left; transition:border-color .15s, transform .15s;
   }
   .cat-card:hover{border-color:var(--brique-600); transform:translateY(-2px);}
+  .cat-card.static-card:hover{border-color:var(--gris-300); transform:none;}
   .cat-card .cat-icon{width:32px; height:32px; margin-bottom:14px; color:var(--brique-600);}
   .cat-card strong{display:block; font-size:1.02rem; margin-bottom:4px;}
   .cat-card span{font-size:0.85rem; color:var(--gris-500);}
@@ -658,18 +659,18 @@
         <h2 data-i18n="partner.pricingTitle">Nos paquets de leads</h2>
         <p style="color:var(--gris-500); font-size:0.85rem; margin-top:6px;" data-i18n="partner.pricingNote">Prix de lancement — sujets à ajustement à mesure que la plateforme se développe.</p>
       </div>
-      <div class="cat-grid" style="grid-template-columns:repeat(3,1fr);">
-        <div class="cat-card" style="text-align:left;">
+      <div class="cat-grid" style="grid-template-columns:repeat(3,1fr); cursor:default;">
+        <div class="cat-card static-card" style="text-align:left; cursor:default;">
           <strong style="font-size:1.1rem;" data-i18n="partner.pkg1Name">Essentiel</strong>
           <div style="font-size:1.6rem; font-weight:700; margin:8px 0; color:var(--brique-600);">400 $</div>
           <span data-i18n="partner.pkg1Desc">10 leads : 6 moyens, 3 qualifiés, 1 premium</span>
         </div>
-        <div class="cat-card" style="text-align:left; border-color:var(--brique-600);">
+        <div class="cat-card static-card" style="text-align:left; cursor:default;">
           <strong style="font-size:1.1rem;" data-i18n="partner.pkg2Name">Avantage</strong>
           <div style="font-size:1.6rem; font-weight:700; margin:8px 0; color:var(--brique-600);">640 $</div>
           <span data-i18n="partner.pkg2Desc">10 leads : 2 moyens, 6 qualifiés, 2 premium</span>
         </div>
-        <div class="cat-card" style="text-align:left;">
+        <div class="cat-card static-card" style="text-align:left; cursor:default;">
           <strong style="font-size:1.1rem;" data-i18n="partner.pkg3Name">VIP</strong>
           <div style="font-size:1.6rem; font-weight:700; margin:8px 0; color:var(--brique-600);">1 025 $</div>
           <span data-i18n="partner.pkg3Desc">10 leads : 3 qualifiés, 7 premium</span>
