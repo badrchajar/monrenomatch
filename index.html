@@ -1419,6 +1419,11 @@
   }
 
   setLang(currentLang);
+
+  // Ouvre directement le formulaire pré-rempli si on arrive d'une page locale (ex. ?type=Cuisine)
+  const urlParams = new URLSearchParams(window.location.search);
+  const presetType = urlParams.get('type');
+  if(presetType){ goToForm(presetType); }
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
