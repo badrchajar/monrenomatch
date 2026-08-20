@@ -1217,6 +1217,13 @@
     window.scrollTo(0,0);
   }
 
+  function updateUrlParam(key, value){
+    const url = new URL(window.location.href);
+    if(value === null){ url.searchParams.delete(key); }
+    else{ url.searchParams.set(key, value); }
+    history.pushState(null, '', url.pathname + url.search);
+  }
+
   function goToForm(presetType){
     hideAllViews();
     document.getElementById('formView').style.display = 'block';
@@ -1235,6 +1242,7 @@
     hideAllViews();
     document.getElementById('homeView').style.display = 'block';
     window.scrollTo(0,0);
+    updateUrlParam('etape', null);
   }
 
   function goToStep(n){
@@ -1243,6 +1251,7 @@
     document.getElementById('progressFill').style.width = (n/totalSteps*100) + '%';
     document.getElementById('progressLabel').textContent = (currentLang === 'fr' ? 'Étape ' : 'Step ') + n + (currentLang === 'fr' ? ' sur 7' : ' of 7');
     window.scrollTo(0,0);
+    updateUrlParam('etape', n);
   }
 
   function selectOpt(btn, field){
@@ -1363,6 +1372,7 @@
     submitBtn.textContent = translations[currentLang]['btn.submit'];
     document.getElementById('formView').style.display = 'none';
     document.getElementById('thanksView').style.display = 'flex';
+    updateUrlParam('etape', 'merci');
     window.scrollTo(0,0);
   }
 
