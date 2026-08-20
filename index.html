@@ -299,7 +299,7 @@
       <div class="nav-links">
         <a href="#comment-ca-marche" data-i18n="nav.how">Comment ça marche</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
-        <a class="entrepreneur-link" href="#" onclick="showPage('contactView'); return false;" data-i18n="nav.contractor">Vous êtes entrepreneur?</a>
+        <a class="entrepreneur-link" href="#" onclick="showPage('partnerView'); return false;" data-i18n="nav.contractor">Vous êtes entrepreneur?</a>
         <div class="lang-toggle">
           <button id="langBtnFr" onclick="setLang('fr')">FR</button>
           <button id="langBtnEn" onclick="setLang('en')">EN</button>
@@ -458,7 +458,7 @@
       <div class="footer-links">
         <a href="#" onclick="showPage('aboutView'); return false;" data-i18n="footer.about">À propos</a>
         <a href="#" onclick="showPage('contactView'); return false;" data-i18n="footer.contact">Contact</a>
-        <a href="#" onclick="showPage('contactView'); return false;" data-i18n="footer.contractors">Pour entrepreneurs</a>
+        <a href="#" onclick="showPage('partnerView'); return false;" data-i18n="footer.contractors">Pour entrepreneurs</a>
         <a href="#" onclick="showPage('privacyView'); return false;" data-i18n="footer.privacy">Politique de confidentialité</a>
         <a href="#" onclick="showPage('termsView'); return false;" data-i18n="footer.terms">Conditions d'utilisation</a>
         <a href="#" onclick="showPage('cookiesView'); return false;" data-i18n="footer.cookies">Gestion des cookies</a>
@@ -497,13 +497,9 @@
   </div></header>
   <div class="subpage-wrap">
     <h1 data-i18n="contact.title">Contact</h1>
-    <p data-i18n="contact.p1">Une question, ou vous êtes entrepreneur et souhaitez devenir partenaire? Écrivez-nous.</p>
+    <p data-i18n="contact.p1">Une question? Écrivez-nous.</p>
     <p><strong data-i18n="contact.emailLabel">Courriel :</strong> <a class="inline-link" href="mailto:info@monrenomatch.ca">info@monrenomatch.ca</a></p>
     <p data-i18n="contact.p2">Nous répondons généralement en moins de 48 heures.</p>
-    <h2 data-i18n="contact.contractorTitle">Vous êtes entrepreneur?</h2>
-    <p data-i18n="contact.contractorP">Nous cherchons des entrepreneurs partenaires en rénovation résidentielle au Québec. Écrivez-nous à l'adresse ci-dessus avec le nom de votre entreprise, votre territoire desservi et vos types de projets, et nous vous contacterons.</p>
-    <h2 data-i18n="contact.replacementTitle">Politique de remplacement des leads</h2>
-    <p data-i18n="contact.replacementP">Un lead est remplacé uniquement si les coordonnées fournies sont invalides dès la réception (numéro ou courriel non fonctionnel) — pas si le propriétaire ne répond pas à un appel ou change d'avis.</p>
   </div>
   <div class="subpage-footer" data-i18n="footer.copyright">© 2026 MonRénoMatch. Tous droits réservés.</div>
 </div>
@@ -594,6 +590,151 @@
     <p data-i18n="cookies.p2">Les cookies essentiels ne nécessitent pas votre consentement. Les cookies d'analyse ou publicitaires, lorsqu'ils sont utilisés, requièrent votre consentement préalable, conformément à la Loi 25.</p>
     <p data-i18n="cookies.p3">Vous pouvez désactiver les cookies en tout temps dans les paramètres de votre navigateur.</p>
   </div>
+  <div class="subpage-footer" data-i18n="footer.copyright">© 2026 MonRénoMatch. Tous droits réservés.</div>
+</div>
+
+<!-- ======================= PARTNER VIEW (Devenir partenaire) ======================= -->
+<div id="partnerView" style="display:none;">
+  <header class="site"><div class="subpage-header wrap">
+    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4l9 8M6 10.5V20h12v-9.5" stroke="#b5533f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>MonRénoMatch</div>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <div class="lang-toggle"><button id="langBtnFrPartner" onclick="setLang('fr')">FR</button><button id="langBtnEnPartner" onclick="setLang('en')">EN</button></div>
+      <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
+    </div>
+  </div></header>
+
+  <section class="hero" style="padding:56px 0 40px;">
+    <div class="wrap" style="max-width:760px;">
+      <span class="eyebrow" data-i18n="partner.eyebrow">Pour les entrepreneurs</span>
+      <h1 style="font-size:2.4rem; max-width:none;" data-i18n="partner.title">Recevez des demandes de propriétaires qui cherchent activement un professionnel.</h1>
+      <p class="lede" data-i18n="partner.lede">Des leads exclusifs, vérifiés personnellement, dans votre région — sans frais d'adhésion ni abonnement obligatoire.</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" onclick="document.getElementById('partnerFormAnchor').scrollIntoView({behavior:'smooth'})" data-i18n="partner.cta">Devenir partenaire →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap" style="max-width:760px;">
+      <div class="steps-3" style="grid-template-columns:repeat(3,1fr);">
+        <div class="step-3">
+          <div class="num">1</div>
+          <h3 data-i18n="partner.s1t">Faites votre demande</h3>
+          <p data-i18n="partner.s1p">Remplissez le formulaire ci-dessous avec votre territoire et vos types de projets.</p>
+        </div>
+        <div class="step-3">
+          <div class="num">2</div>
+          <h3 data-i18n="partner.s2t">On vous contacte</h3>
+          <p data-i18n="partner.s2p">Nous discutons de votre profil et des paquets de leads disponibles pour vous.</p>
+        </div>
+        <div class="step-3">
+          <div class="num">3</div>
+          <h3 data-i18n="partner.s3t">Vous recevez vos leads</h3>
+          <p data-i18n="partner.s3p">Chaque lead est exclusif — jamais partagé avec un autre entrepreneur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section why-band">
+    <div class="wrap" style="max-width:760px;">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="partner.whyEyebrow">Pourquoi MonRénoMatch</span>
+        <h2 data-i18n="partner.whyTitle">Pensé pour bâtir une vraie relation de confiance</h2>
+      </div>
+      <div class="why-grid" style="grid-template-columns:1fr 1fr;">
+        <div class="why-item"><h3 data-i18n="partner.w1t">Leads exclusifs</h3><p data-i18n="partner.w1p">Chaque lead vous est envoyé à vous seul — jamais revendu à plusieurs entrepreneurs en même temps.</p></div>
+        <div class="why-item"><h3 data-i18n="partner.w2t">Vérification personnelle</h3><p data-i18n="partner.w2p">Votre profil est examiné par une vraie personne avant votre acceptation sur la plateforme.</p></div>
+        <div class="why-item"><h3 data-i18n="partner.w3t">Aucun frais d'adhésion</h3><p data-i18n="partner.w3p">Vous payez uniquement pour les leads ou paquets que vous achetez — jamais d'abonnement obligatoire.</p></div>
+        <div class="why-item"><h3 data-i18n="partner.w4t">Qualification rigoureuse</h3><p data-i18n="partner.w4p">Chaque lead passe par un processus de qualification structuré avant de vous être envoyé.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom:24px;">
+    <div class="wrap" style="max-width:900px;">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="partner.pricingEyebrow">Tarification</span>
+        <h2 data-i18n="partner.pricingTitle">Nos paquets de leads</h2>
+        <p style="color:var(--gris-500); font-size:0.85rem; margin-top:6px;" data-i18n="partner.pricingNote">Prix de lancement — sujets à ajustement à mesure que la plateforme se développe.</p>
+      </div>
+      <div class="cat-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="cat-card" style="text-align:left;">
+          <strong style="font-size:1.1rem;" data-i18n="partner.pkg1Name">Essentiel</strong>
+          <div style="font-size:1.6rem; font-weight:700; margin:8px 0; color:var(--brique-600);">400 $</div>
+          <span data-i18n="partner.pkg1Desc">10 leads : 6 moyens, 3 qualifiés, 1 premium</span>
+        </div>
+        <div class="cat-card" style="text-align:left; border-color:var(--brique-600);">
+          <strong style="font-size:1.1rem;" data-i18n="partner.pkg2Name">Avantage</strong>
+          <div style="font-size:1.6rem; font-weight:700; margin:8px 0; color:var(--brique-600);">640 $</div>
+          <span data-i18n="partner.pkg2Desc">10 leads : 2 moyens, 6 qualifiés, 2 premium</span>
+        </div>
+        <div class="cat-card" style="text-align:left;">
+          <strong style="font-size:1.1rem;" data-i18n="partner.pkg3Name">VIP</strong>
+          <div style="font-size:1.6rem; font-weight:700; margin:8px 0; color:var(--brique-600);">1 025 $</div>
+          <span data-i18n="partner.pkg3Desc">10 leads : 3 qualifiés, 7 premium</span>
+        </div>
+      </div>
+      <p style="font-size:0.85rem; color:var(--gris-500); margin-top:16px;" data-i18n="partner.unitNote">Achat à l'unité aussi disponible : 35 $ (moyen), 75 $ (qualifié), 140 $ (premium).</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap" style="max-width:760px;">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="partner.replacementEyebrow">Transparence</span>
+        <h2 data-i18n="partner.replacementTitle">Politique de remplacement des leads</h2>
+      </div>
+      <p data-i18n="partner.replacementP">Un lead est remplacé uniquement si les coordonnées fournies sont invalides dès la réception (numéro ou courriel non fonctionnel) — pas si le propriétaire ne répond pas à un appel ou change d'avis.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap" style="max-width:760px;">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="partner.faqEyebrow">Questions fréquentes</span>
+        <h2 data-i18n="partner.faqTitle">FAQ entrepreneurs</h2>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span data-i18n="partner.faqQ1">Suis-je obligé d'accepter chaque lead reçu?</span> <span class="faq-plus">+</span></div>
+        <div class="faq-a" data-i18n="partner.faqA1">Non, vous restez libre de contacter ou non chaque lead reçu selon votre disponibilité.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span data-i18n="partner.faqQ2">Comment se fait la vérification de mon entreprise?</span> <span class="faq-plus">+</span></div>
+        <div class="faq-a" data-i18n="partner.faqA2">Nous examinons votre profil manuellement (site web, avis, historique) avant votre acceptation comme partenaire.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span data-i18n="partner.faqQ3">Puis-je acheter des leads sans m'engager sur un paquet complet?</span> <span class="faq-plus">+</span></div>
+        <div class="faq-a" data-i18n="partner.faqA3">Oui, l'achat à l'unité est toujours disponible si vous préférez commencer petit.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="partnerFormAnchor">
+    <div class="wrap" style="max-width:600px;">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="partner.formEyebrow">Faire une demande</span>
+        <h2 data-i18n="partner.formTitle">Devenir partenaire</h2>
+      </div>
+      <label class="flabel" data-i18n="partner.fNom">Nom de l'entreprise</label>
+      <input class="finput" id="p_nom" type="text">
+      <label class="flabel" data-i18n="partner.fTerritoire">Territoire desservi</label>
+      <input class="finput" id="p_territoire" type="text" data-i18n-placeholder="partner.fTerritoirePh" placeholder="ex. Laval, Rive-Nord">
+      <label class="flabel" data-i18n="partner.fTypes">Types de projets</label>
+      <input class="finput" id="p_types" type="text" data-i18n-placeholder="partner.fTypesPh" placeholder="ex. Cuisine, salle de bain">
+      <label class="flabel" data-i18n="partner.fTel">Téléphone</label>
+      <input class="finput" id="p_telephone" type="tel">
+      <label class="flabel" data-i18n="partner.fEmail">Courriel</label>
+      <input class="finput" id="p_email" type="email">
+      <label class="flabel" data-i18n="partner.fMsg">Message (optionnel)</label>
+      <textarea class="finput" id="p_message"></textarea>
+      <div class="fnav" style="justify-content:flex-end;">
+        <button class="btn btn-primary" id="partnerSubmitBtn" onclick="submitPartnerForm()" data-i18n="partner.fSubmit">Envoyer ma demande</button>
+      </div>
+      <div id="partnerThanks" style="display:none; margin-top:20px; padding:16px; background:var(--sauge-100); border-radius:10px; font-size:0.9rem;" data-i18n="partner.fThanks">Merci! Nous vous contacterons sous peu.</div>
+    </div>
+  </section>
+
   <div class="subpage-footer" data-i18n="footer.copyright">© 2026 MonRénoMatch. Tous droits réservés.</div>
 </div>
 
@@ -812,7 +953,7 @@
       'about.p2':'Nous sommes une jeune entreprise en démarrage, basée au Québec. Notre objectif est simple : simplifier la mise en relation entre les propriétaires et des entrepreneurs sérieux, sans démarche compliquée.',
       'about.p3':'Le service est entièrement gratuit pour les propriétaires. Ce sont les entrepreneurs partenaires qui font affaire avec nous pour recevoir des demandes de soumission qualifiées.',
       'contact.title':'Contact',
-      'contact.p1':'Une question, ou vous êtes entrepreneur et souhaitez devenir partenaire? Écrivez-nous.',
+      'contact.p1':'Une question? Écrivez-nous.',
       'contact.emailLabel':'Courriel :',
       'contact.p2':'Nous répondons généralement en moins de 48 heures.',
       'contact.contractorTitle':'Vous êtes entrepreneur?',
@@ -851,7 +992,36 @@
       'cookies.title':'Gestion des cookies',
       'cookies.p1':"Ce site utilise des cookies essentiels au bon fonctionnement du site (par exemple, pour mémoriser votre choix de langue), ainsi que des cookies d'analyse pour comprendre comment le site est utilisé.",
       'cookies.p2':"Les cookies essentiels ne nécessitent pas votre consentement. Les cookies d'analyse ou publicitaires, lorsqu'ils sont utilisés, requièrent votre consentement préalable, conformément à la Loi 25.",
-      'cookies.p3':'Vous pouvez désactiver les cookies en tout temps dans les paramètres de votre navigateur.'
+      'cookies.p3':'Vous pouvez désactiver les cookies en tout temps dans les paramètres de votre navigateur.',
+      'partner.eyebrow':'Pour les entrepreneurs',
+      'partner.title':'Recevez des demandes de propriétaires qui cherchent activement un professionnel.',
+      'partner.lede':"Des leads exclusifs, vérifiés personnellement, dans votre région — sans frais d'adhésion ni abonnement obligatoire.",
+      'partner.cta':'Devenir partenaire →',
+      'partner.s1t':'Faites votre demande','partner.s1p':'Remplissez le formulaire ci-dessous avec votre territoire et vos types de projets.',
+      'partner.s2t':'On vous contacte','partner.s2p':'Nous discutons de votre profil et des paquets de leads disponibles pour vous.',
+      'partner.s3t':'Vous recevez vos leads','partner.s3p':'Chaque lead est exclusif — jamais partagé avec un autre entrepreneur.',
+      'partner.whyEyebrow':'Pourquoi MonRénoMatch','partner.whyTitle':'Pensé pour bâtir une vraie relation de confiance',
+      'partner.w1t':'Leads exclusifs','partner.w1p':'Chaque lead vous est envoyé à vous seul — jamais revendu à plusieurs entrepreneurs en même temps.',
+      'partner.w2t':'Vérification personnelle','partner.w2p':'Votre profil est examiné par une vraie personne avant votre acceptation sur la plateforme.',
+      'partner.w3t':"Aucun frais d'adhésion",'partner.w3p':"Vous payez uniquement pour les leads ou paquets que vous achetez — jamais d'abonnement obligatoire.",
+      'partner.w4t':'Qualification rigoureuse','partner.w4p':'Chaque lead passe par un processus de qualification structuré avant de vous être envoyé.',
+      'partner.pricingEyebrow':'Tarification','partner.pricingTitle':'Nos paquets de leads',
+      'partner.pricingNote':'Prix de lancement — sujets à ajustement à mesure que la plateforme se développe.',
+      'partner.pkg1Name':'Essentiel','partner.pkg1Desc':'10 leads : 6 moyens, 3 qualifiés, 1 premium',
+      'partner.pkg2Name':'Avantage','partner.pkg2Desc':'10 leads : 2 moyens, 6 qualifiés, 2 premium',
+      'partner.pkg3Name':'VIP','partner.pkg3Desc':'10 leads : 3 qualifiés, 7 premium',
+      'partner.unitNote':"Achat à l'unité aussi disponible : 35 $ (moyen), 75 $ (qualifié), 140 $ (premium).",
+      'partner.replacementEyebrow':'Transparence','partner.replacementTitle':'Politique de remplacement des leads',
+      'partner.replacementP':"Un lead est remplacé uniquement si les coordonnées fournies sont invalides dès la réception (numéro ou courriel non fonctionnel) — pas si le propriétaire ne répond pas à un appel ou change d'avis.",
+      'partner.faqEyebrow':'Questions fréquentes','partner.faqTitle':'FAQ entrepreneurs',
+      'partner.faqQ1':"Suis-je obligé d'accepter chaque lead reçu?",'partner.faqA1':'Non, vous restez libre de contacter ou non chaque lead reçu selon votre disponibilité.',
+      'partner.faqQ2':'Comment se fait la vérification de mon entreprise?','partner.faqA2':'Nous examinons votre profil manuellement (site web, avis, historique) avant votre acceptation comme partenaire.',
+      'partner.faqQ3':"Puis-je acheter des leads sans m'engager sur un paquet complet?",'partner.faqA3':"Oui, l'achat à l'unité est toujours disponible si vous préférez commencer petit.",
+      'partner.formEyebrow':'Faire une demande','partner.formTitle':'Devenir partenaire',
+      'partner.fNom':"Nom de l'entreprise",'partner.fTerritoire':'Territoire desservi','partner.fTerritoirePh':'ex. Laval, Rive-Nord',
+      'partner.fTypes':'Types de projets','partner.fTypesPh':'ex. Cuisine, salle de bain',
+      'partner.fTel':'Téléphone','partner.fEmail':'Courriel','partner.fMsg':'Message (optionnel)',
+      'partner.fSubmit':'Envoyer ma demande','partner.fThanks':'Merci! Nous vous contacterons sous peu.'
     },
     en: {
       'nav.how':'How it works','nav.faq':'FAQ','nav.contractor':'Are you a contractor?','nav.cta':'Describe my project',
@@ -915,7 +1085,7 @@
       'about.p2':"We're a young startup based in Quebec. Our goal is simple: make it easier for homeowners to connect with serious contractors, without a complicated process.",
       'about.p3':"The service is completely free for homeowners. It's our partner contractors who pay to work with us and receive qualified quote requests.",
       'contact.title':'Contact',
-      'contact.p1':'Have a question, or are you a contractor looking to become a partner? Get in touch.',
+      'contact.p1':'Have a question? Get in touch.',
       'contact.emailLabel':'Email:',
       'contact.p2':'We usually respond within 48 hours.',
       'contact.contractorTitle':'Are you a contractor?',
@@ -954,7 +1124,36 @@
       'cookies.title':'Cookie Settings',
       'cookies.p1':'This site uses essential cookies for the site to function properly (for example, to remember your language choice), as well as analytics cookies to understand how the site is used.',
       'cookies.p2':"Essential cookies do not require your consent. Analytics or advertising cookies, when used, require your prior consent, in accordance with Law 25.",
-      'cookies.p3':'You can disable cookies at any time in your browser settings.'
+      'cookies.p3':'You can disable cookies at any time in your browser settings.',
+      'partner.eyebrow':'For contractors',
+      'partner.title':'Get requests from homeowners actively looking for a professional.',
+      'partner.lede':'Exclusive, personally vetted leads in your area — no membership fee, no mandatory subscription.',
+      'partner.cta':'Become a partner →',
+      'partner.s1t':'Send your request','partner.s1p':'Fill out the form below with your service area and project types.',
+      'partner.s2t':"We'll reach out",'partner.s2p':'We discuss your profile and the lead packages available to you.',
+      'partner.s3t':'You receive your leads','partner.s3p':'Every lead is exclusive — never shared with another contractor.',
+      'partner.whyEyebrow':'Why MonRénoMatch','partner.whyTitle':'Built to create a real relationship of trust',
+      'partner.w1t':'Exclusive leads','partner.w1p':'Every lead is sent to you alone — never resold to multiple contractors at once.',
+      'partner.w2t':'Personal vetting','partner.w2p':'Your profile is reviewed by a real person before you are accepted onto the platform.',
+      'partner.w3t':'No membership fee','partner.w3p':'You only pay for the leads or packages you buy — never a mandatory subscription.',
+      'partner.w4t':'Rigorous qualification','partner.w4p':'Every lead goes through a structured qualification process before being sent to you.',
+      'partner.pricingEyebrow':'Pricing','partner.pricingTitle':'Our lead packages',
+      'partner.pricingNote':'Launch pricing — subject to adjustment as the platform grows.',
+      'partner.pkg1Name':'Essentiel','partner.pkg1Desc':'10 leads: 6 average, 3 qualified, 1 premium',
+      'partner.pkg2Name':'Avantage','partner.pkg2Desc':'10 leads: 2 average, 6 qualified, 2 premium',
+      'partner.pkg3Name':'VIP','partner.pkg3Desc':'10 leads: 3 qualified, 7 premium',
+      'partner.unitNote':'Per-lead pricing also available: $35 (average), $75 (qualified), $140 (premium).',
+      'partner.replacementEyebrow':'Transparency','partner.replacementTitle':'Lead replacement policy',
+      'partner.replacementP':"A lead is replaced only if the contact details provided are invalid upon receipt (non-working phone number or email) — not if the homeowner doesn't answer a call or changes their mind.",
+      'partner.faqEyebrow':'Frequently asked questions','partner.faqTitle':'Contractor FAQ',
+      'partner.faqQ1':'Am I required to accept every lead I receive?','partner.faqA1':"No, you're always free to contact or skip a lead depending on your availability.",
+      'partner.faqQ2':'How is my company vetted?','partner.faqA2':'We manually review your profile (website, reviews, history) before accepting you as a partner.',
+      'partner.faqQ3':'Can I buy leads without committing to a full package?','partner.faqA3':"Yes, per-lead purchases are always available if you'd rather start small.",
+      'partner.formEyebrow':'Make a request','partner.formTitle':'Become a partner',
+      'partner.fNom':'Company name','partner.fTerritoire':'Service area','partner.fTerritoirePh':'e.g. Laval, North Shore',
+      'partner.fTypes':'Project types','partner.fTypesPh':'e.g. Kitchen, bathroom',
+      'partner.fTel':'Phone','partner.fEmail':'Email','partner.fMsg':'Message (optional)',
+      'partner.fSubmit':'Send my request','partner.fThanks':"Thanks! We'll be in touch soon."
     }
   };
 
@@ -968,7 +1167,7 @@
     document.getElementById('langBtnEn').classList.toggle('active', lang === 'en');
     document.getElementById('langBtnFrForm').classList.toggle('active', lang === 'fr');
     document.getElementById('langBtnEnForm').classList.toggle('active', lang === 'en');
-    ['About','Contact','Priv','Terms','Cookies'].forEach(suffix => {
+    ['About','Contact','Priv','Terms','Cookies','Partner'].forEach(suffix => {
       document.getElementById('langBtnFr'+suffix).classList.toggle('active', lang === 'fr');
       document.getElementById('langBtnEn'+suffix).classList.toggle('active', lang === 'en');
     });
@@ -990,7 +1189,7 @@
   const totalSteps = 7;
 
   function hideAllViews(){
-    ['homeView','formView','thanksView','aboutView','contactView','privacyView','termsView','cookiesView'].forEach(id => {
+    ['homeView','formView','thanksView','aboutView','contactView','privacyView','termsView','cookiesView','partnerView'].forEach(id => {
       document.getElementById(id).style.display = 'none';
     });
   }
@@ -1148,6 +1347,54 @@
     document.getElementById('formView').style.display = 'none';
     document.getElementById('thanksView').style.display = 'flex';
     window.scrollTo(0,0);
+  }
+
+  async function submitPartnerForm(){
+    const nom = document.getElementById('p_nom').value.trim();
+    const territoire = document.getElementById('p_territoire').value.trim();
+    const types = document.getElementById('p_types').value.trim();
+    const telephone = document.getElementById('p_telephone').value.trim();
+    const email = document.getElementById('p_email').value.trim();
+    const message = document.getElementById('p_message').value.trim();
+
+    if(!nom || !telephone || !email){
+      alert(currentLang === 'fr' ? "Merci de remplir le nom de l'entreprise, le téléphone et le courriel." : 'Please fill in the company name, phone and email.');
+      return;
+    }
+
+    const btn = document.getElementById('partnerSubmitBtn');
+    btn.disabled = true;
+    btn.textContent = currentLang === 'fr' ? 'Envoi en cours...' : 'Sending...';
+
+    try{
+      await fetch(SUPABASE_URL + '/rest/v1/partner_inquiries', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_KEY,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          nom_entreprise: nom,
+          territoire: territoire,
+          types_travaux: types,
+          telephone: telephone,
+          email: email,
+          message: message
+        })
+      });
+    }catch(e){ console.warn("Erreur d'envoi:", e); }
+
+    btn.disabled = false;
+    btn.textContent = translations[currentLang]['partner.fSubmit'];
+    document.getElementById('partnerThanks').style.display = 'block';
+    document.getElementById('p_nom').value = '';
+    document.getElementById('p_territoire').value = '';
+    document.getElementById('p_types').value = '';
+    document.getElementById('p_telephone').value = '';
+    document.getElementById('p_email').value = '';
+    document.getElementById('p_message').value = '';
   }
 
   function toggleFaq(el){
