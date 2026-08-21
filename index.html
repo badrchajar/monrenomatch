@@ -20,6 +20,16 @@
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12L12 4l9 8M6 10.5V20h12v-9.5' fill='none' stroke='%23b5533f' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <meta name="google-site-verification" content="cszdIC3aaDYfXmk013naAbJjIM0kiB0bZD1gB-tK-do" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18402063672"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18402063672');
+</script>
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap');
 
@@ -1373,6 +1383,9 @@
     document.getElementById('formView').style.display = 'none';
     document.getElementById('thanksView').style.display = 'flex';
     updateUrlParam('etape', 'merci');
+    if(typeof gtag === 'function'){
+      gtag('event', 'page_view', { page_path: window.location.pathname + window.location.search });
+    }
     window.scrollTo(0,0);
   }
 
