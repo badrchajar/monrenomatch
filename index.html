@@ -906,6 +906,9 @@
 
 <script>
   // Connexion à la base de données Supabase (clé publique — sans danger dans le navigateur, protégée par RLS)
+  // File d'attente pour les événements Vercel Analytics envoyés avant que le script ne soit chargé
+  window.va = window.va || function(){ (window.vaq = window.vaq || []).push(arguments); };
+
   const SUPABASE_URL = 'https://noochmyvtnxuvdrqqrud.supabase.co';
   const SUPABASE_KEY = 'sb_publishable_ZAnzdtzcEI2_mskcAPJ9fw_DzlOdOkL';
 
@@ -1232,6 +1235,7 @@
     if(value === null){ url.searchParams.delete(key); }
     else{ url.searchParams.set(key, value); }
     history.pushState(null, '', url.pathname + url.search);
+    window.va('pageview');
   }
 
   function goToForm(presetType){
