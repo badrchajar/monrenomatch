@@ -1384,7 +1384,10 @@
     document.getElementById('thanksView').style.display = 'flex';
     updateUrlParam('etape', 'merci');
     if(typeof gtag === 'function'){
-      gtag('event', 'page_view', { page_path: window.location.pathname + window.location.search });
+      gtag('event', 'page_view', {
+        page_path: window.location.pathname + window.location.search,
+        page_location: window.location.href
+      });
     }
     window.scrollTo(0,0);
   }
