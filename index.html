@@ -1033,10 +1033,10 @@
       'partner.w4t':'Qualification rigoureuse','partner.w4p':'Chaque lead passe par un processus de qualification structuré avant de vous être envoyé.',
       'partner.pricingEyebrow':'Tarification','partner.pricingTitle':'Nos paquets de leads',
       'partner.pricingNote':'Prix de lancement — sujets à ajustement à mesure que la plateforme se développe.',
-      'partner.pkg1Name':'Essentiel','partner.pkg1Desc':'10 leads : 6 moyens, 3 qualifiés, 1 premium',
-      'partner.pkg2Name':'Avantage','partner.pkg2Desc':'10 leads : 2 moyens, 6 qualifiés, 2 premium',
-      'partner.pkg3Name':'VIP','partner.pkg3Desc':'10 leads : 3 qualifiés, 7 premium',
-      'partner.unitNote':"Achat à l'unité aussi disponible : 35 $ (moyen), 75 $ (qualifié), 140 $ (premium).",
+      'partner.pkg1Name':'Essentiel','partner.pkg1Desc':'10 leads : 6 Standard, 3 Qualifiés, 1 Élite',
+      'partner.pkg2Name':'Avantage','partner.pkg2Desc':'10 leads : 2 Standard, 6 Qualifiés, 2 Élite',
+      'partner.pkg3Name':'VIP','partner.pkg3Desc':'10 leads : 3 Qualifiés, 7 Élite',
+      'partner.unitNote':"Achat à l'unité aussi disponible : 35 $ (Standard), 75 $ (Qualifié), 140 $ (Élite).",
       'partner.replacementEyebrow':'Transparence','partner.replacementTitle':'Politique de remplacement des leads',
       'partner.replacementP':"Un lead est remplacé uniquement si les coordonnées fournies sont invalides dès la réception (numéro ou courriel non fonctionnel) — pas si le propriétaire ne répond pas à un appel ou change d'avis.",
       'partner.faqEyebrow':'Questions fréquentes','partner.faqTitle':'FAQ entrepreneurs',
@@ -1169,10 +1169,10 @@
       'partner.w4t':'Rigorous qualification','partner.w4p':'Every lead goes through a structured qualification process before being sent to you.',
       'partner.pricingEyebrow':'Pricing','partner.pricingTitle':'Our lead packages',
       'partner.pricingNote':'Launch pricing — subject to adjustment as the platform grows.',
-      'partner.pkg1Name':'Essentiel','partner.pkg1Desc':'10 leads: 6 average, 3 qualified, 1 premium',
-      'partner.pkg2Name':'Avantage','partner.pkg2Desc':'10 leads: 2 average, 6 qualified, 2 premium',
-      'partner.pkg3Name':'VIP','partner.pkg3Desc':'10 leads: 3 qualified, 7 premium',
-      'partner.unitNote':'Per-lead pricing also available: $35 (average), $75 (qualified), $140 (premium).',
+      'partner.pkg1Name':'Essentiel','partner.pkg1Desc':'10 leads: 6 Standard, 3 Qualified, 1 Elite',
+      'partner.pkg2Name':'Avantage','partner.pkg2Desc':'10 leads: 2 Standard, 6 Qualified, 2 Elite',
+      'partner.pkg3Name':'VIP','partner.pkg3Desc':'10 leads: 3 Qualified, 7 Elite',
+      'partner.unitNote':'Per-lead pricing also available: $35 (Standard), $75 (Qualified), $140 (Elite).',
       'partner.replacementEyebrow':'Transparency','partner.replacementTitle':'Lead replacement policy',
       'partner.replacementP':"A lead is replaced only if the contact details provided are invalid upon receipt (non-working phone number or email) — not if the homeowner doesn't answer a call or changes their mind.",
       'partner.faqEyebrow':'Frequently asked questions','partner.faqTitle':'Contractor FAQ',
@@ -1325,9 +1325,9 @@
   }
 
   function categoryFor(score){
-    if(score >= 80) return {label:'🔥 Premium', cls:'score-premium'};
+    if(score >= 80) return {label:'🔥 Élite', cls:'score-premium'};
     if(score >= 60) return {label:'🟢 Qualifié', cls:'score-qualifie'};
-    if(score >= 40) return {label:'🟡 Moyen', cls:'score-moyen'};
+    if(score >= 40) return {label:'🟡 Standard', cls:'score-moyen'};
     return {label:'🔴 Faible', cls:'score-faible'};
   }
 
