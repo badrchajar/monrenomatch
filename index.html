@@ -1215,6 +1215,24 @@
   }
 
   let formData = {};
+  const sessionId = (crypto.randomUUID ? crypto.randomUUID() : Date.now() + '-' + Math.random().toString(36).slice(2));
+
+  function logStep(n){
+    fetch(SUPABASE_URL + '/rest/v1/form_progress', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_KEY,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({
+        session_id: sessionId,
+        etape: n,
+        type_projet: formData.type_projet || null
+      })
+    }).catch(function(e){ console.warn('Erreur de suivi:', e); });
+  }
   let currentStep = 1;
   const totalSteps = 7;
 
@@ -1266,6 +1284,7 @@
     document.getElementById('progressLabel').textContent = (currentLang === 'fr' ? 'Étape ' : 'Step ') + n + (currentLang === 'fr' ? ' sur 7' : ' of 7');
     window.scrollTo(0,0);
     updateUrlParam('etape', n);
+    logStep(n);
   }
 
   function selectOpt(btn, field){
