@@ -1371,8 +1371,9 @@
     submitBtn.disabled = true;
     submitBtn.textContent = currentLang === 'fr' ? 'Envoi en cours...' : 'Sending...';
 
+    let sendOk = false;
     try{
-      await fetch(SUPABASE_URL + '/rest/v1/leads', {
+      const resp = await fetch(SUPABASE_URL + '/rest/v1/leads', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -1399,10 +1400,19 @@
           source: 'site_direct'
         })
       });
+      sendOk = resp.ok;
+      if(!resp.ok){ console.warn('Erreur Supabase (leads):', resp.status); }
     }catch(e){ console.warn('Erreur d\'envoi vers Supabase:', e); }
 
     submitBtn.disabled = false;
     submitBtn.textContent = translations[currentLang]['btn.submit'];
+
+    if(!sendOk){
+      alert(currentLang === 'fr'
+        ? "Une erreur est survenue : votre demande n'a pas pu être envoyée. Veuillez réessayer dans quelques minutes ou nous écrire à info@monrenomatch.ca."
+        : "An error occurred: your request could not be sent. Please try again in a few minutes or email us at info@monrenomatch.ca.");
+      return;
+    }
     document.getElementById('formView').style.display = 'none';
     document.getElementById('thanksView').style.display = 'flex';
     updateUrlParam('etape', 'merci');
@@ -1432,8 +1442,9 @@
     btn.disabled = true;
     btn.textContent = currentLang === 'fr' ? 'Envoi en cours...' : 'Sending...';
 
+    let partnerOk = false;
     try{
-      await fetch(SUPABASE_URL + '/rest/v1/partner_inquiries', {
+      const resp = await fetch(SUPABASE_URL + '/rest/v1/partner_inquiries', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -1451,10 +1462,19 @@
           message: message
         })
       });
+      partnerOk = resp.ok;
+      if(!resp.ok){ console.warn('Erreur Supabase (partner_inquiries):', resp.status); }
     }catch(e){ console.warn("Erreur d'envoi:", e); }
 
     btn.disabled = false;
     btn.textContent = translations[currentLang]['partner.fSubmit'];
+
+    if(!partnerOk){
+      alert(currentLang === 'fr'
+        ? "Une erreur est survenue : votre demande n'a pas pu être envoyée. Veuillez réessayer ou nous écrire à info@monrenomatch.ca."
+        : "An error occurred: your request could not be sent. Please try again or email us at info@monrenomatch.ca.");
+      return;
+    }
     document.getElementById('partnerThanks').style.display = 'block';
     document.getElementById('p_nom').value = '';
     document.getElementById('p_territoire').value = '';
