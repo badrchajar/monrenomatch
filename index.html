@@ -802,6 +802,12 @@
     <div class="fstep" data-step="2">
       <h2 data-i18n="s2.title">Où se trouve votre projet?</h2>
       <p class="fhint" data-i18n="s2.hint">Ça nous aide à trouver un professionnel proche de chez vous.</p>
+      <div class="opt-grid" id="cityGrid">
+        <button class="opt-card" type="button" onclick="pickCity('Montréal')">Montréal</button>
+        <button class="opt-card" type="button" onclick="pickCity('Laval')">Laval</button>
+        <button class="opt-card" type="button" onclick="pickCity('Longueuil')">Longueuil</button>
+        <button class="opt-card" type="button" onclick="pickCity('Brossard')">Brossard</button>
+      </div>
       <label class="flabel" data-i18n="s2.city">Ville</label>
       <input class="finput" id="f_ville" type="text" data-i18n-placeholder="s2.cityPh" placeholder="ex. Laval">
       <label class="flabel" data-i18n="s2.postal">Code postal</label>
@@ -949,7 +955,7 @@
       'form.quit':'Quitter',
       's1.title':'Quel type de projet voulez-vous réaliser?','s1.hint':"Choisissez l'option qui correspond le mieux à votre projet.",
       's2.title':'Où se trouve votre projet?','s2.hint':'Ça nous aide à trouver un professionnel proche de chez vous.',
-      's2.city':'Ville','s2.cityPh':'ex. Laval','s2.postal':'Code postal','s2.postalPh':'ex. H7A 1A1',
+      's2.city':'Ville','s2.cityPh':'ex. Laval','s2.postal':'Code postal (facultatif)','s2.postalPh':'ex. H7A 1A1',
       's3.title':'Êtes-vous propriétaire du bâtiment?',
       's3.info':"Certains services peuvent ne pas être disponibles si vous n'êtes pas propriétaire — nous transmettons tout de même votre projet lorsque c'est pertinent.",
       's4.title':'Quel est votre budget approximatif?','s4.hint':"Une estimation suffit — rien n'est final.",
@@ -1085,7 +1091,7 @@
       'form.quit':'Exit',
       's1.title':'What type of project do you want to do?','s1.hint':'Choose the option that best fits your project.',
       's2.title':'Where is your project located?','s2.hint':'This helps us find a professional near you.',
-      's2.city':'City','s2.cityPh':'e.g. Laval','s2.postal':'Postal code','s2.postalPh':'e.g. H7A 1A1',
+      's2.city':'City','s2.cityPh':'e.g. Laval','s2.postal':'Postal code (optional)','s2.postalPh':'e.g. H7A 1A1',
       's3.title':'Do you own the building?',
       's3.info':"Some services may not be available if you don't own the property — we still forward your project when relevant.",
       's4.title':'What is your approximate budget?','s4.hint':'An estimate is enough — nothing is final.',
@@ -1313,6 +1319,11 @@
     if(step === 5 && !formData.budget_tranche){ alert(msgs.budget); return; }
     if(step === 6 && !formData.echeancier){ alert(msgs.timing); return; }
     goToStep(step+1);
+  }
+
+  function pickCity(city){
+    document.getElementById('f_ville').value = city;
+    nextStep(2);
   }
 
   function prevStep(step){ goToStep(step-1); }
