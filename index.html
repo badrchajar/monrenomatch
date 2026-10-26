@@ -234,6 +234,9 @@
   input.finput:focus, textarea.finput:focus{border-color:var(--brique-600); outline:none;}
   textarea.finput{min-height:110px; resize:vertical;}
 
+  .trust-note{display:flex; gap:12px; align-items:flex-start; margin-top:18px; padding:14px 16px; background:var(--sauge-100); border-radius:10px; font-size:0.84rem; line-height:1.5; color:var(--ardoise-800);}
+  .trust-note svg{flex:none; margin-top:2px;}
+  .trust-note b{font-weight:700;}
   .consent-row{display:flex; align-items:flex-start; gap:10px; margin-top:22px; font-size:0.85rem; color:var(--ardoise-600);}
   .consent-row input{margin-top:3px; flex:none;}
 
@@ -572,7 +575,7 @@
           <span class="hero-note" data-i18n="hero.note">2 minutes · aucune carte de crédit</span>
         </div>
         <div class="hero-tags">
-          <span data-i18n="demo.t1">Gratuit</span><span data-i18n="demo.t2">2 minutes</span><span>Montréal</span><span>Laval</span><span>Longueuil</span>
+          <span data-i18n="demo.t1">Sans engagement</span><span data-i18n="demo.t2">Un seul entrepreneur</span><span data-i18n="trust.tag">Réponse rapide</span>
         </div>
       </div>
       <div class="hero-illustration">
@@ -1171,6 +1174,7 @@
         <button class="opt-card" data-value="Courriel" onclick="selectOpt(this,'pref_communication')" data-i18n="opt.email">Courriel</button>
         <button class="opt-card" data-value="Texto" onclick="selectOpt(this,'pref_communication')" data-i18n="opt.text">Texto</button>
       </div>
+      <div class="trust-note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f5a47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-i18n="trust.note"><b>Vos informations restent entre bonnes mains.</b> Elles ne sont transmises qu'à un seul entrepreneur, jamais vendues à plusieurs. Pas de pourriel. Pour les faire supprimer : info@monrenomatch.ca.</span></div>
       <div class="consent-row">
         <input type="checkbox" id="f_consent">
         <label for="f_consent" data-i18n="s6.consent">J'accepte que MonRénoMatch partage mes coordonnées avec un entrepreneur partenaire correspondant à mon projet, conformément à la <a href="#" style="text-decoration:underline;">politique de confidentialité</a>.</label>
@@ -1234,7 +1238,7 @@
       'form.quit':'Quitter',
       's1.title':'Quel type de projet voulez-vous réaliser?','s1.hint':"Choisissez l'option qui correspond le mieux à votre projet.",
       's2b.title':'Parlons un peu de votre projet','s2b.hint':'Quelques clics, rien n\'est final.','s3b.title':'Comment vous joindre?','s3b.hint':'Dernière étape : vos coordonnées.','opt.optional':'(facultatif)','btn.change':'modifier',
-      'demo.tag':'APERÇU','demo.s1':'Décrivez votre projet','demo.s2':'On trouve le bon match','demo.s3':'Un professionnel vous contacte','demo.type':'Type de projet','demo.city':'Ville','demo.cont':'Continuer →','demo.search':'Recherche dans votre secteur…','demo.found':'Votre secteur : Laval','demo.pro':'Entrepreneur partenaire','demo.direct':'Contact direct','demo.free':'Sans obligation','demo.k1':'01 Projet','demo.k2':'02 Match','demo.k3':'03 Contact','demo.t1':'Gratuit','demo.t2':'2 minutes',
+      'trust.note':'<b>Vos informations restent entre bonnes mains.</b> Elles ne sont transmises qu\'à un seul entrepreneur, jamais vendues à plusieurs. Pas de pourriel. Pour les faire supprimer : info@monrenomatch.ca.','trust.tag':'Réponse rapide','demo.tag':'APERÇU','demo.s1':'Décrivez votre projet','demo.s2':'On trouve le bon match','demo.s3':'Un professionnel vous contacte','demo.type':'Type de projet','demo.city':'Ville','demo.cont':'Continuer →','demo.search':'Recherche dans votre secteur…','demo.found':'Votre secteur : Laval','demo.pro':'Entrepreneur partenaire','demo.direct':'Contact direct','demo.free':'Sans obligation','demo.k1':'01 Projet','demo.k2':'02 Match','demo.k3':'03 Contact','demo.t1':'Sans engagement','demo.t2':'Un seul entrepreneur',
       's2.title':'Où se trouve votre projet?','s2.hint':'Ça nous aide à trouver un professionnel proche de chez vous.',
       's2.city':'Ville','s2.cityPh':'ex. Laval','s2.postal':'Code postal (facultatif)','s2.postalPh':'ex. H7A 1A1 (facultatif)',
       's3.title':'Êtes-vous propriétaire du bâtiment?',
@@ -1372,7 +1376,7 @@
       'form.quit':'Exit',
       's1.title':'What type of project do you want to do?','s1.hint':'Choose the option that best fits your project.',
       's2b.title':'Tell us a bit about your project','s2b.hint':'A few taps, nothing is final.','s3b.title':'How can we reach you?','s3b.hint':'Last step: your contact details.','opt.optional':'(optional)','btn.change':'change',
-      'demo.tag':'PREVIEW','demo.s1':'Describe your project','demo.s2':'We find the right match','demo.s3':'A professional contacts you','demo.type':'Project type','demo.city':'City','demo.cont':'Continue →','demo.search':'Searching your area…','demo.found':'Your area: Laval','demo.pro':'Partner contractor','demo.direct':'Direct contact','demo.free':'No obligation','demo.k1':'01 Project','demo.k2':'02 Match','demo.k3':'03 Contact','demo.t1':'Free','demo.t2':'2 minutes',
+      'trust.note':'<b>Your information stays in good hands.</b> It is shared with one contractor only, never sold to several. No spam. To have it deleted: info@monrenomatch.ca.','trust.tag':'Fast response','demo.tag':'PREVIEW','demo.s1':'Describe your project','demo.s2':'We find the right match','demo.s3':'A professional contacts you','demo.type':'Project type','demo.city':'City','demo.cont':'Continue →','demo.search':'Searching your area…','demo.found':'Your area: Laval','demo.pro':'Partner contractor','demo.direct':'Direct contact','demo.free':'No obligation','demo.k1':'01 Project','demo.k2':'02 Match','demo.k3':'03 Contact','demo.t1':'No obligation','demo.t2':'One contractor only',
       's2.title':'Where is your project located?','s2.hint':'This helps us find a professional near you.',
       's2.city':'City','s2.cityPh':'e.g. Laval','s2.postal':'Postal code (optional)','s2.postalPh':'e.g. H7A 1A1 (optional)',
       's3.title':'Do you own the building?',
