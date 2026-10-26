@@ -12,10 +12,10 @@
 <meta property="og:description" content="Vous planifiez une rénovation de salle de bain à Montréal? Décrivez votre projet et soyez mis en relation gratuitement avec un entrepreneur qualifié dans votre quartier.">
 <meta property="og:url" content="https://monrenomatch.ca/renovation-salle-de-bain-montreal.html">
 <meta property="og:locale" content="fr_CA">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231f5a47'/%3E%3Cpath d='M15 36 L32 20 L49 36' fill='none' stroke='%23fff' stroke-width='5.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='44' r='6.2' fill='%239fd9bb'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23e3a94f'/%3E%3Cpath d='M15 36 L32 20 L49 36' fill='none' stroke='%231a1405' stroke-width='5.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='44' r='6.2' fill='%231a1405' fill-opacity='.72'/%3E%3C/svg%3E">
 <style>
 
-  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
   :root{
     --ardoise-950:#0b1220;
@@ -520,6 +520,99 @@
     .fc-status .st-a{opacity:0;} .fc-pro .sk1{width:78%;} .fc-pro .sk2{width:52%;} .fc-pro .ck, .fc-pills span{opacity:1;}
   }
   .logo-mark{width:26px; height:26px; flex:none; border-radius:7px;}
+  /* ================= D2 : thème sombre « Or » ================= */
+  :root{
+    --creme-50:#121110; --creme-100:#1a1816; --blanc:#1a1816;
+    --gris-300:#2e2a25; --gris-500:#8d8a84;
+    --ardoise-950:#ffffff; --ardoise-800:#eceee9; --ardoise-600:#a9a69f; --ardoise-300:#6f6c66;
+    --brique-600:#e3a94f; --brique-700:#c98f35; --brique-100:rgba(227,169,79,.12);
+    --sauge-600:#e3a94f; --sauge-100:rgba(227,169,79,.12);
+    --font-display:'Manrope','Inter',system-ui,sans-serif; --font-body:'Inter',system-ui,sans-serif;
+  }
+  html{color-scheme:dark;}
+  body{background:#121110; color:#eceee9; font-family:var(--font-body);}
+  h1,h2,h3,h4,.logo{font-family:var(--font-display); letter-spacing:-.03em;}
+  header.site{background:rgba(18,17,16,.9); border-bottom:1px solid #26231f; backdrop-filter:blur(8px);}
+  .logo{color:#fff; font-weight:800;}
+  .nav-links a{color:#a9a69f;} .nav-links a:hover{color:#fff;}
+  .btn-primary{background:#e3a94f; color:#17120a; border:none; font-weight:700;}
+  .btn-primary:hover{background:#efba66;}
+  .eyebrow{color:#e3a94f; font-weight:600; letter-spacing:.04em; text-transform:none; font-size:.82rem; display:inline-flex; align-items:center; gap:10px;}
+  .eyebrow::before{content:""; width:8px; height:8px; border-radius:50%; background:#e3a94f; display:inline-block;}
+  .d2hero{padding:84px 0 70px; text-align:center;}
+  .d2hero-in{display:flex; flex-direction:column; align-items:center;}
+  .d2hero h1{font-size:clamp(2.3rem,6.2vw,5rem); font-weight:800; line-height:1.04; max-width:1000px; margin:22px auto 0; color:#fff;}
+  .d2hero h1 .hl{color:#e3a94f;}
+  .d2hero .lede{max-width:620px; margin:26px auto 0; font-size:1.15rem; line-height:1.6; color:#a9a69f;}
+  .qs{display:grid; grid-template-columns:1fr 1fr auto; gap:28px; align-items:end; text-align:left; width:100%; max-width:1000px; margin-top:48px; padding:26px 30px; background:#1a1816; border:1px solid #2e2a25; border-radius:18px;}
+  .qs-lbl{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:#8d8a84; margin-bottom:12px;}
+  .qs-chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .qs-chip{font:inherit; font-size:.92rem; padding:10px 14px; min-height:44px; background:transparent; color:#d7d4cd; border:1px solid #3a352e; border-radius:10px; cursor:pointer; transition:border-color .15s, background .15s;}
+  .qs-chip:hover{border-color:#6a5a3a;}
+  .qs-chip.on{border-color:#e3a94f; background:rgba(227,169,79,.14); color:#fff;}
+  .qs-go{font:inherit; font-weight:700; font-size:1rem; padding:0 30px; min-height:52px; background:#e3a94f; color:#17120a; border:none; border-radius:12px; cursor:pointer; white-space:nowrap;}
+  .qs-go:hover{background:#efba66;}
+  .qs-err{min-height:22px; margin-top:12px; color:#f0a38f; font-size:.9rem;}
+  .hero-tags{position:static; display:flex; flex-wrap:wrap; justify-content:center; gap:0; margin-top:4px;}
+  .hero-tags span{border:none; background:none; padding:0; font-size:.85rem; font-weight:500; color:#8d8a84; text-transform:none; letter-spacing:0;}
+  .hero-tags span + span::before{content:'·'; margin:0 12px; color:#4a443b;}
+  .hero-priv{display:flex; align-items:center; gap:8px; margin-top:14px; font-size:.82rem; color:#8d8a84;}
+  .section{padding:84px 0;}
+  .section-head h2,.who h2{font-weight:800; color:#fff;}
+  .steps-3{border-top:1px solid #2e2a25; border-bottom:1px solid #2e2a25; gap:0;}
+  .step-3{background:transparent; border:none; border-right:1px solid #2e2a25; border-radius:0; padding:34px 32px;}
+  .step-3:last-child{border-right:none;}
+  .step-3 .num{background:none; width:auto; height:auto; color:#e3a94f; font:700 .8rem var(--font-display); letter-spacing:.1em; border:none; padding:0; margin-bottom:12px; display:block; text-align:left;}
+  .step-3 .num::before{content:"0";}
+  .cat-card,.why-item,.faq-item{background:#1a1816; border:1px solid #2e2a25; border-radius:14px; color:#eceee9;}
+  .cat-card:hover{border-color:#e3a94f; transform:none;}
+  .cat-icon{color:#e3a94f;}
+  .cat-card span,.why-item p{color:#a9a69f;}
+  .why-band{background:#16140f; border-top:1px solid #26231f; border-bottom:1px solid #26231f;}
+  .faq-item{border-radius:0; background:transparent; border:none; border-bottom:1px solid #2e2a25;}
+  .faq-q{color:#fff;} .faq-a{color:#a9a69f;} .faq-plus{color:#e3a94f;}
+  .who-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;}
+  .who p{color:#a9a69f; line-height:1.7; margin:0 0 14px; font-size:1.02rem;}
+  .who-mail{display:inline-block; margin-top:6px; color:#e3a94f; font-weight:600; border-bottom:1px solid rgba(227,169,79,.4);}
+  .final-cta{background:#1a1816; border:1px solid #2e2a25; border-radius:22px; color:#fff;}
+  .final-cta h2{color:#fff;} .final-cta p{color:#a9a69f;}
+  footer.site{background:#0e0d0c; border-top:1px solid #26231f; color:#8d8a84;}
+  footer.site a{color:#8d8a84;} footer.site a:hover{color:#fff;}
+  .finput,.ftextarea,select.finput,textarea.finput{background:#121110; color:#fff; border:1px solid #3a352e;}
+  .finput:focus,textarea:focus{border-color:#e3a94f; outline:none; box-shadow:0 0 0 3px rgba(227,169,79,.18);}
+  .finput::placeholder{color:#6f6c66;}
+  .opt-card{background:#1a1816; color:#d7d4cd; border:1px solid #3a352e;}
+  .opt-card:hover{border-color:#6a5a3a;}
+  .opt-card.selected{background:rgba(227,169,79,.14); border-color:#e3a94f; color:#fff;}
+  .flabel,.fstep h2{color:#fff;} .fhint{color:#a9a69f;}
+  .info-box{background:rgba(227,169,79,.1); color:#e8d3a6; border-color:rgba(227,169,79,.3);}
+  .trust-note{background:rgba(227,169,79,.1); color:#e8e4da;}
+  .trust-note svg{stroke:#e3a94f;}
+  .consent-row{color:#a9a69f;}
+  .lang-toggle{border-color:#3a352e; background:transparent;}
+  .lang-toggle button{color:#a9a69f; background:transparent;}
+  .lang-toggle button.active{background:#e3a94f !important; color:#17120a !important;}
+  .why-band .eyebrow{color:#e3a94f !important;} .why-band .eyebrow::before{background:#e3a94f !important;}
+  .final-cta .btn-primary{background:#e3a94f !important; color:#17120a !important;} .final-cta .btn-primary:hover{background:#efba66 !important;}
+  .steps-3{border:none; display:block;}
+  .step-3{border-right:none !important; border-bottom:1px solid #2e2a25; padding:30px 0;}
+  .step-3:first-child{border-top:1px solid #2e2a25;}
+  .d2hero .lede{margin-top:30px;}
+  @media (max-width:980px){
+    .d2hero{padding:48px 0 50px;}
+    .qs{grid-template-columns:1fr; gap:22px; padding:22px 18px;}
+    .qs-go{width:100%;}
+    .steps-3{display:block;}
+    .step-3{border-right:none; border-bottom:1px solid #2e2a25;}
+    .step-3:last-child{border-bottom:none;}
+    .who-grid{grid-template-columns:1fr; gap:24px;}
+    .hero-priv{text-align:left; align-items:flex-start;}
+  }
+  .nav-links a.btn,.nav-links a.btn-primary,a.btn-primary,button.btn-primary{color:#17120a !important;}
+  footer.site .logo,footer.site .logo *{color:#fff;}
+  .why-item{padding:24px 26px;} .why-grid{gap:16px !important;}
+  .nav-links a.entrepreneur-link{color:#a9a69f;}
+  .qs-cta{padding:18px 34px; font-size:1.05rem; border-radius:12px;}
   </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18402063672"></script>
@@ -534,7 +627,7 @@
 <header class="site">
   <div class="nav wrap">
     <a href="/" class="logo" style="text-decoration:none;">
-      <svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#1f5a47"/><path d="M15 36 L32 20 L49 36" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#9fd9bb"/></svg>
+      <svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#e3a94f"/><path d="M15 36 L32 20 L49 36" stroke="#1a1405" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#1a1405" fill-opacity=".72"/></svg>
       MonRénoMatch
     </a>
     <div class="nav-links">
@@ -544,88 +637,14 @@
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">Rénovation résidentielle · Montréal</span>
-      <h1>Rénovation de salle de bain à Montréal</h1>
-      <p class="lede">Trouvez un entrepreneur qualifié pour moderniser votre salle de bain, peu importe le type de bâtiment.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="/?type=Salle de bain">Décrire mon projet →</a>
-        <span class="hero-note">2 minutes · gratuit · sans obligation</span>
-      </div>
-        <div class="hero-tags">
-          <span data-i18n="demo.t1">Gratuit</span><span data-i18n="demo.t2">2 minutes</span><span>Montréal</span><span>Laval</span><span>Longueuil</span>
-        </div>
-    </div>
-    <div class="hero-illustration">
-        <div class="flow" aria-hidden="true">
-        <div class="flow-track"><i class="flow-progress"></i></div>
-        <div class="flow-cols">
-          <div class="flow-col fc1">
-            <div class="fc-head"><span class="fc-num">01</span><span class="fc-title" data-i18n="demo.s1">Décrivez votre projet</span></div>
-            <div class="fc-body">
-              <div class="fc-lbl" data-i18n="demo.type">Type de projet</div>
-              <div class="fc-chips">
-                <span class="chip c-cuisine" data-i18n="opt.kitchen">Cuisine</span>
-                <span class="chip" data-i18n="opt.bath">Salle de bain</span>
-                <span class="chip" data-i18n="opt.basement">Sous-sol</span>
-              </div>
-              <div class="fc-lbl" data-i18n="demo.city">Ville</div>
-              <div class="fc-chips">
-                <span class="chip">Montréal</span>
-                <span class="chip c-laval">Laval</span>
-                <span class="chip">Longueuil</span>
-                <span class="chip">Brossard</span>
-              </div>
-              <div class="fc-btn" data-i18n="demo.cont">Continuer →</div>
-            </div>
-          </div>
-          <div class="flow-col fc2">
-            <div class="fc-head"><span class="fc-num">02</span><span class="fc-title" data-i18n="demo.s2">On trouve le bon match</span></div>
-            <div class="fc-body">
-              <svg class="fc-map" viewBox="0 0 360 170" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs><pattern id="fdots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" class="dm-dot"/></pattern></defs>
-                <rect width="360" height="170" rx="8" fill="url(#fdots)"/>
-                <path class="dm-river" d="M0 92 C70 70 110 118 190 98 C250 84 300 120 360 100" stroke-width="10" stroke-linecap="round"/>
-                <g class="dm-lines" stroke-width="1.4" stroke-linecap="round">
-                  <path class="ln l1" pathLength="1" d="M130 105 L240 120"/>
-                  <path class="ln l2" pathLength="1" d="M130 105 L160 40"/>
-                  <path class="ln l3" pathLength="1" d="M240 120 L160 40"/>
-                </g>
-                <circle class="ring" cx="160" cy="40" r="22" stroke-width="2"/>
-                <circle class="nd n1" cx="130" cy="105" r="7" stroke-width="2"/>
-                <circle class="nd n2" cx="240" cy="120" r="7" stroke-width="2"/>
-                <circle class="nd n3" cx="160" cy="40" r="7" stroke-width="2"/>
-                <circle class="hit" cx="160" cy="40" r="7"/>
-                <text x="142" y="132" class="mt mt1">Montréal</text>
-                <text x="176" y="34" class="mt mt3 mt-hit">Laval</text>
-                <text x="252" y="144" class="mt mt2">Longueuil</text>
-              </svg>
-              <div class="fc-status">
-                <span class="st st-a" data-i18n="demo.search">Recherche dans votre secteur…</span>
-                <span class="st st-b" data-i18n="demo.found">Votre secteur : Laval</span>
-              </div>
-            </div>
-          </div>
-          <div class="flow-col fc3">
-            <div class="fc-head"><span class="fc-num">03</span><span class="fc-title" data-i18n="demo.s3">Un professionnel vous contacte</span></div>
-            <div class="fc-body">
-              <div class="fc-recap"><span data-i18n="opt.kitchen">Cuisine</span><span>Laval</span></div>
-              <div class="fc-pro">
-                <div class="av"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-                <div class="pro-body">
-                  <div class="pro-t" data-i18n="demo.pro">Entrepreneur partenaire</div>
-                  <div class="sk sk1"></div><div class="sk sk2"></div>
-                </div>
-                <div class="ck">✓</div>
-              </div>
-              <div class="fc-pills"><span data-i18n="demo.direct">Contact direct</span><span data-i18n="demo.free">Sans obligation</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<section class="hero d2hero">
+  <div class="wrap d2hero-in">
+    <span class="eyebrow">Rénovation résidentielle · Montréal</span>
+    <h1>Rénovation de salle de bain à Montréal</h1>
+    <p class="lede">Trouvez un entrepreneur qualifié pour moderniser votre salle de bain, peu importe le type de bâtiment.</p>
+    <div class="hero-cta" style="margin-top:36px;"><a class="btn btn-primary qs-cta" href="/?type=Salle de bain">Décrire mon projet →</a></div>
+    <div class="hero-tags" style="margin-top:22px;"><span>Sans engagement</span><span>Un seul entrepreneur</span><span>Réponse rapide</span></div>
+    <p class="hero-priv"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Vos informations ne sont transmises qu'à un seul entrepreneur, jamais vendues à plusieurs.</p>
   </div>
 </section>
 
@@ -664,7 +683,7 @@
 <footer class="site">
   <div class="wrap footer-grid">
     <a href="/" class="logo" style="text-decoration:none;">
-      <svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#1f5a47"/><path d="M15 36 L32 20 L49 36" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#9fd9bb"/></svg>
+      <svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#e3a94f"/><path d="M15 36 L32 20 L49 36" stroke="#1a1405" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#1a1405" fill-opacity=".72"/></svg>
       MonRénoMatch
     </a>
     <div class="footer-links">

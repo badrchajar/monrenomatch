@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="MonRénoMatch — Trouvez un entrepreneur pour votre projet de rénovation">
 <meta name="twitter:description" content="Décrivez votre projet en quelques minutes et soyez mis en relation gratuitement avec un entrepreneur qualifié au Québec.">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231f5a47'/%3E%3Cpath d='M15 36 L32 20 L49 36' fill='none' stroke='%23fff' stroke-width='5.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='44' r='6.2' fill='%239fd9bb'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23e3a94f'/%3E%3Cpath d='M15 36 L32 20 L49 36' fill='none' stroke='%231a1405' stroke-width='5.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='44' r='6.2' fill='%231a1405' fill-opacity='.72'/%3E%3C/svg%3E">
 <meta name="google-site-verification" content="cszdIC3aaDYfXmk013naAbJjIM0kiB0bZD1gB-tK-do" />
 
 <!-- Google tag (gtag.js) -->
@@ -31,7 +31,7 @@
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
   :root{
     --ardoise-950:#0b1220;
@@ -539,6 +539,161 @@
     .fc-status .st-a{opacity:0;} .fc-pro .sk1{width:78%;} .fc-pro .sk2{width:52%;} .fc-pro .ck, .fc-pills span{opacity:1;}
   }
   .logo-mark{width:26px; height:26px; flex:none; border-radius:7px;}
+
+  /* ================= D2 : thème sombre « Or » ================= */
+  :root{
+    --creme-50:#121110; --creme-100:#1a1816; --blanc:#1a1816;
+    --gris-300:#2e2a25; --gris-500:#8d8a84;
+    --ardoise-950:#ffffff; --ardoise-800:#eceee9; --ardoise-600:#a9a69f; --ardoise-300:#6f6c66;
+    --brique-600:#e3a94f; --brique-700:#c98f35; --brique-100:rgba(227,169,79,.12);
+    --sauge-600:#e3a94f; --sauge-100:rgba(227,169,79,.12);
+    --font-display:'Manrope','Inter',system-ui,sans-serif; --font-body:'Inter',system-ui,sans-serif;
+  }
+  html{color-scheme:dark;}
+  body{background:#121110; color:#eceee9; font-family:var(--font-body);}
+  h1,h2,h3,h4,.logo{font-family:var(--font-display); letter-spacing:-.03em;}
+  header.site{background:rgba(18,17,16,.9); border-bottom:1px solid #26231f; backdrop-filter:blur(8px);}
+  .logo{color:#fff; font-weight:800;}
+  .nav-links a{color:#a9a69f;} .nav-links a:hover{color:#fff;}
+  .btn-primary{background:#e3a94f; color:#17120a; border:none; font-weight:700;}
+  .btn-primary:hover{background:#efba66;}
+  .eyebrow{color:#e3a94f; font-weight:600; letter-spacing:.04em; text-transform:none; font-size:.82rem; display:inline-flex; align-items:center; gap:10px;}
+  .eyebrow::before{content:""; width:8px; height:8px; border-radius:50%; background:#e3a94f; display:inline-block;}
+  .d2hero{padding:84px 0 70px; text-align:center;}
+  .d2hero-in{display:flex; flex-direction:column; align-items:center;}
+  .d2hero h1{font-size:clamp(2.3rem,6.2vw,5rem); font-weight:800; line-height:1.04; max-width:1000px; margin:22px auto 0; color:#fff;}
+  .d2hero h1 .hl{color:#e3a94f;}
+  .d2hero .lede{max-width:620px; margin:26px auto 0; font-size:1.15rem; line-height:1.6; color:#a9a69f;}
+  .qs{display:grid; grid-template-columns:1fr 1fr auto; gap:28px; align-items:end; text-align:left; width:100%; max-width:1000px; margin-top:48px; padding:26px 30px; background:#1a1816; border:1px solid #2e2a25; border-radius:18px;}
+  .qs-lbl{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:#8d8a84; margin-bottom:12px;}
+  .qs-chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .qs-chip{font:inherit; font-size:.92rem; padding:10px 14px; min-height:44px; background:transparent; color:#d7d4cd; border:1px solid #3a352e; border-radius:10px; cursor:pointer; transition:border-color .15s, background .15s;}
+  .qs-chip:hover{border-color:#6a5a3a;}
+  .qs-chip.on{border-color:#e3a94f; background:rgba(227,169,79,.14); color:#fff;}
+  .qs-go{font:inherit; font-weight:700; font-size:1rem; padding:0 30px; min-height:52px; background:#e3a94f; color:#17120a; border:none; border-radius:12px; cursor:pointer; white-space:nowrap;}
+  .qs-go:hover{background:#efba66;}
+  .qs-err{min-height:22px; margin-top:12px; color:#f0a38f; font-size:.9rem;}
+  .hero-tags{position:static; display:flex; flex-wrap:wrap; justify-content:center; gap:0; margin-top:4px;}
+  .hero-tags span{border:none; background:none; padding:0; font-size:.85rem; font-weight:500; color:#8d8a84; text-transform:none; letter-spacing:0;}
+  .hero-tags span + span::before{content:'·'; margin:0 12px; color:#4a443b;}
+  .hero-priv{display:flex; align-items:center; gap:8px; margin-top:14px; font-size:.82rem; color:#8d8a84;}
+  .section{padding:84px 0;}
+  .section-head h2,.who h2{font-weight:800; color:#fff;}
+  .steps-3{border-top:1px solid #2e2a25; border-bottom:1px solid #2e2a25; gap:0;}
+  .step-3{background:transparent; border:none; border-right:1px solid #2e2a25; border-radius:0; padding:34px 32px;}
+  .step-3:last-child{border-right:none;}
+  .step-3 .num{background:none; width:auto; height:auto; color:#e3a94f; font:700 .8rem var(--font-display); letter-spacing:.1em; border:none; padding:0; margin-bottom:12px; display:block; text-align:left;}
+  .step-3 .num::before{content:"0";}
+  .cat-card,.why-item,.faq-item{background:#1a1816; border:1px solid #2e2a25; border-radius:14px; color:#eceee9;}
+  .cat-card:hover{border-color:#e3a94f; transform:none;}
+  .cat-icon{color:#e3a94f;}
+  .cat-card span,.why-item p{color:#a9a69f;}
+  .why-band{background:#16140f; border-top:1px solid #26231f; border-bottom:1px solid #26231f;}
+  .faq-item{border-radius:0; background:transparent; border:none; border-bottom:1px solid #2e2a25;}
+  .faq-q{color:#fff;} .faq-a{color:#a9a69f;} .faq-plus{color:#e3a94f;}
+  .who-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;}
+  .who p{color:#a9a69f; line-height:1.7; margin:0 0 14px; font-size:1.02rem;}
+  .who-mail{display:inline-block; margin-top:6px; color:#e3a94f; font-weight:600; border-bottom:1px solid rgba(227,169,79,.4);}
+  .final-cta{background:#1a1816; border:1px solid #2e2a25; border-radius:22px; color:#fff;}
+  .final-cta h2{color:#fff;} .final-cta p{color:#a9a69f;}
+  footer.site{background:#0e0d0c; border-top:1px solid #26231f; color:#8d8a84;}
+  footer.site a{color:#8d8a84;} footer.site a:hover{color:#fff;}
+  .finput,.ftextarea,select.finput,textarea.finput{background:#121110; color:#fff; border:1px solid #3a352e;}
+  .finput:focus,textarea:focus{border-color:#e3a94f; outline:none; box-shadow:0 0 0 3px rgba(227,169,79,.18);}
+  .finput::placeholder{color:#6f6c66;}
+  .opt-card{background:#1a1816; color:#d7d4cd; border:1px solid #3a352e;}
+  .opt-card:hover{border-color:#6a5a3a;}
+  .opt-card.selected{background:rgba(227,169,79,.14); border-color:#e3a94f; color:#fff;}
+  .flabel,.fstep h2{color:#fff;} .fhint{color:#a9a69f;}
+  .info-box{background:rgba(227,169,79,.1); color:#e8d3a6; border-color:rgba(227,169,79,.3);}
+  .trust-note{background:rgba(227,169,79,.1); color:#e8e4da;}
+  .trust-note svg{stroke:#e3a94f;}
+  .consent-row{color:#a9a69f;}
+  .lang-toggle{border-color:#3a352e; background:transparent;}
+  .lang-toggle button{color:#a9a69f; background:transparent;}
+  .lang-toggle button.active{background:#e3a94f !important; color:#17120a !important;}
+  .why-band .eyebrow{color:#e3a94f !important;} .why-band .eyebrow::before{background:#e3a94f !important;}
+  .final-cta .btn-primary{background:#e3a94f !important; color:#17120a !important;} .final-cta .btn-primary:hover{background:#efba66 !important;}
+  .steps-3{border:none; display:block;}
+  .step-3{border-right:none !important; border-bottom:1px solid #2e2a25; padding:30px 0;}
+  .step-3:first-child{border-top:1px solid #2e2a25;}
+  .d2hero .lede{margin-top:30px;}
+  .nav-links a.btn,.nav-links a.btn-primary,a.btn-primary,button.btn-primary{color:#17120a !important;}
+  footer.site .logo,footer.site .logo *{color:#fff;}
+  .why-item{padding:24px 26px;} .why-grid{gap:16px !important;}
+  .nav-links a.entrepreneur-link{color:#a9a69f;}
+
+  /* ===== Motion graphic D2 (boucle 12 s) ===== */
+  .mg-head{margin-bottom:34px;}
+  .mg{max-width:1040px; margin:0 auto; background:#1a1816; border:1px solid #2e2a25; border-radius:20px; overflow:hidden;}
+  .mg-top{display:flex; justify-content:space-between; align-items:center; padding:14px 22px; border-bottom:1px solid #2e2a25;}
+  .mg-tag{font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:#8d8a84;}
+  .mg-cols{display:grid; grid-template-columns:repeat(3,1fr); min-height:330px;}
+  .mg-c{padding:26px 26px 28px; border-right:1px solid #2e2a25; border-top:2px solid transparent; animation:mgDim 12s infinite both;}
+  .mg-c:last-child{border-right:none;}
+  .mg-c.c2{animation-delay:-8s;} .mg-c.c3{animation-delay:-4s;}
+  .mg-h{display:flex; gap:12px; align-items:baseline; margin-bottom:20px;}
+  .mg-h b{font:700 .78rem var(--font-display); color:#e3a94f; letter-spacing:.1em;}
+  .mg-h span{font:700 1.02rem var(--font-display); color:#fff; letter-spacing:-.02em;}
+  .mg-lbl{font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:#8d8a84; margin:14px 0 8px;}
+  .mg-chips{display:flex; flex-wrap:wrap; gap:7px;}
+  .mg-chip{font-size:.82rem; padding:8px 12px; border:1px solid #3a352e; border-radius:9px; color:#d7d4cd;}
+  .mg-chip.sel1{animation:mgSel 12s infinite both; animation-delay:0s;}
+  .mg-chip.sel2{animation:mgSel 12s infinite both; animation-delay:.9s;}
+  .mg-btn{margin-top:22px; text-align:center; background:#e3a94f; color:#17120a; font-weight:700; font-size:.9rem; padding:12px; border-radius:10px; animation:mgPress 12s infinite both;}
+  .mg-map{width:100%; height:auto; display:block;}
+  .mg-ln{stroke-dasharray:1; stroke-dashoffset:1; animation:mgDraw 12s infinite both;}
+  .mg-ln.l2{animation-delay:.25s;} .mg-ln.l3{animation-name:mgDrawWin;}
+  .mg-ring{transform-box:fill-box; transform-origin:center; opacity:0; animation:mgRing 12s infinite both;}
+  .mg-nd{fill:#1a1816; stroke:#6a5a3a; transform-box:fill-box; transform-origin:center;}
+  .mg-nd.n3{animation:mgWin 12s infinite both;}
+  .mg-t{font:600 11px var(--font-body); fill:#a9a69f;} .mg-tw{fill:#e3a94f; opacity:0; animation:mgFadeIn 12s infinite both;}
+  .mg-card{background:#121110; border:1px solid #2e2a25; border-radius:14px; padding:18px; animation:mgCard 12s infinite both;}
+  .mg-who{display:flex; align-items:center; gap:12px; margin-bottom:16px;}
+  .mg-av{width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,#e3a94f,#8a6420); flex:none;}
+  .mg-n{font:700 .92rem var(--font-display); color:#fff;} .mg-s{font-size:.78rem; color:#8d8a84;}
+  .mg-ok{width:26px; height:26px; margin-left:auto; flex:none;}
+  .mg-ck{stroke-dasharray:1; stroke-dashoffset:1; animation:mgCheck 12s infinite both;}
+  .mg-sk{height:9px; border-radius:5px; background:#2a2621; margin-bottom:10px; transform-origin:left; animation:mgSk 12s infinite both;}
+  .mg-sk.a{width:92%;} .mg-sk.b{width:74%; animation-delay:.12s;} .mg-sk.c{width:55%; animation-delay:.24s;}
+  .mg-pill{display:inline-block; margin-top:8px; font-size:.78rem; font-weight:600; color:#e3a94f; background:rgba(227,169,79,.12); border-radius:999px; padding:6px 12px; opacity:0; animation:mgFadeIn 12s infinite both;}
+  .mg-bar{height:3px; background:#26231f;} .mg-bar i{display:block; height:100%; width:100%; background:#e3a94f; transform-origin:left; animation:mgBar 12s linear infinite;}
+  .mg-prog{display:none;}
+  @keyframes mgDim{0%,29%{opacity:1; border-top-color:#e3a94f;} 34%,94%{opacity:.4; border-top-color:transparent;} 100%{opacity:1; border-top-color:#e3a94f;}}
+  @keyframes mgSel{0%,6%{background:transparent; border-color:#3a352e; color:#d7d4cd;} 9%,92%{background:rgba(227,169,79,.16); border-color:#e3a94f; color:#fff;} 97%,100%{background:transparent; border-color:#3a352e; color:#d7d4cd;}}
+  @keyframes mgPress{0%,24%{transform:scale(1); box-shadow:none;} 27%{transform:scale(.96);} 30%,100%{transform:scale(1); box-shadow:0 0 0 0 rgba(227,169,79,0);} 28%{box-shadow:0 0 0 8px rgba(227,169,79,.25);}}
+  @keyframes mgDraw{0%,36%{stroke-dashoffset:1;} 44%,94%{stroke-dashoffset:0; opacity:.35;} 98%,100%{stroke-dashoffset:1; opacity:.35;}}
+  @keyframes mgDrawWin{0%,40%{stroke-dashoffset:1; opacity:1;} 50%,94%{stroke-dashoffset:0; opacity:1;} 98%,100%{stroke-dashoffset:1; opacity:1;}}
+  @keyframes mgRing{0%,33%{opacity:0; transform:scale(.4);} 35%{opacity:.9;} 46%{opacity:0; transform:scale(2.6);} 100%{opacity:0; transform:scale(2.6);}}
+  @keyframes mgWin{0%,48%{fill:#1a1816; stroke:#6a5a3a; transform:scale(1);} 54%{transform:scale(1.35);} 58%,94%{fill:#e3a94f; stroke:#e3a94f; transform:scale(1);} 98%,100%{fill:#1a1816; stroke:#6a5a3a;}}
+  @keyframes mgFadeIn{0%,54%{opacity:0;} 60%,94%{opacity:1;} 98%,100%{opacity:0;}}
+  @keyframes mgCard{0%,66%{opacity:0; transform:translateY(14px);} 72%,94%{opacity:1; transform:none;} 98%,100%{opacity:0; transform:translateY(14px);}}
+  @keyframes mgCheck{0%,74%{stroke-dashoffset:1;} 80%,94%{stroke-dashoffset:0;} 98%,100%{stroke-dashoffset:1;}}
+  @keyframes mgSk{0%,70%{transform:scaleX(0);} 78%,94%{transform:scaleX(1);} 98%,100%{transform:scaleX(0);}}
+  @keyframes mgBar{from{transform:scaleX(0);} to{transform:scaleX(1);}}
+  @keyframes mgFade1{0%,29%{opacity:1;} 34%,96%{opacity:0;} 100%{opacity:1;}}
+  @media (max-width:980px){
+    .mg-cols{display:block; position:relative; min-height:350px;}
+    .mg-c{position:absolute; inset:0; border:none; animation-name:mgFade1;}
+    .mg-c.c2{animation-delay:-8s;} .mg-c.c3{animation-delay:-4s;}
+    .mg-top{padding:12px 18px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .mg-c,.mg-chip,.mg-btn,.mg-ln,.mg-ring,.mg-nd,.mg-tw,.mg-card,.mg-ck,.mg-sk,.mg-pill,.mg-bar i{animation:none !important;}
+    .mg-ln{stroke-dashoffset:0;} .mg-tw,.mg-pill{opacity:1;} .mg-ck{stroke-dashoffset:0;} .mg-nd.n3{fill:#e3a94f; stroke:#e3a94f;}
+    .mg-chip.sel1,.mg-chip.sel2{background:rgba(227,169,79,.16); border-color:#e3a94f; color:#fff;}
+    @media (max-width:980px){ .mg-cols{display:block; min-height:0;} .mg-c{position:static; border-bottom:1px solid #2e2a25;} }
+  }
+  @media (max-width:980px){
+    .d2hero{padding:48px 0 50px;}
+    .qs{grid-template-columns:1fr; gap:22px; padding:22px 18px;}
+    .qs-go{width:100%;}
+    .steps-3{display:block;}
+    .step-3{border-right:none; border-bottom:1px solid #2e2a25;}
+    .step-3:last-child{border-bottom:none;}
+    .who-grid{grid-template-columns:1fr; gap:24px;}
+    .hero-priv{text-align:left; align-items:flex-start;}
+  }
   </style>
 </head>
 <body>
@@ -548,7 +703,7 @@
   <header class="site">
     <div class="nav wrap">
       <div class="logo" onclick="goHome()">
-        <svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#1f5a47"/><path d="M15 36 L32 20 L49 36" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#9fd9bb"/></svg>
+        <svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#e3a94f"/><path d="M15 36 L32 20 L49 36" stroke="#1a1405" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#1a1405" fill-opacity=".72"/></svg>
         MonRénoMatch
       </div>
       <div class="nav-links">
@@ -564,87 +719,89 @@
     </div>
   </header>
 
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow" data-i18n="hero.eyebrow">Rénovation résidentielle · Québec</span>
-        <h1 data-i18n="hero.title">Votre projet de rénovation commence ici.</h1>
-        <p class="lede" data-i18n="hero.lede">Décrivez votre projet et découvrez des professionnels qui pourraient vous aider — gratuitement, sans obligation ni engagement.</p>
-        <div class="hero-cta">
-          <button class="btn btn-primary" onclick="goToForm()" data-i18n="hero.cta">Décrire mon projet →</button>
-          <span class="hero-note" data-i18n="hero.note">2 minutes · aucune carte de crédit</span>
+  <section class="hero d2hero">
+    <div class="wrap d2hero-in">
+      <span class="eyebrow" data-i18n="hero.eyebrow">Rénovation résidentielle · Grand Montréal</span>
+      <h1 data-i18n="hero.title">Votre projet mérite <span class="hl">le bon entrepreneur.</span></h1>
+      <p class="lede" data-i18n="hero.lede">Un seul formulaire, un seul professionnel de votre secteur. Pas de relances de cinq entreprises.</p>
+      <div class="qs" id="qs">
+        <div class="qs-col">
+          <div class="qs-lbl" data-i18n="qs.type">Type de projet</div>
+          <div class="qs-chips" id="qsType">
+            <button type="button" class="qs-chip" data-v="Cuisine" data-i18n="opt.kitchen">Cuisine</button>
+            <button type="button" class="qs-chip" data-v="Salle de bain" data-i18n="opt.bath">Salle de bain</button>
+            <button type="button" class="qs-chip" data-v="Sous-sol" data-i18n="opt.basement">Sous-sol</button>
+            <button type="button" class="qs-chip" data-v="Autre" data-i18n="opt.other">Autre</button>
+          </div>
         </div>
-        <div class="hero-tags">
-          <span data-i18n="demo.t1">Sans engagement</span><span data-i18n="demo.t2">Un seul entrepreneur</span><span data-i18n="trust.tag">Réponse rapide</span>
+        <div class="qs-col">
+          <div class="qs-lbl" data-i18n="qs.city">Votre ville</div>
+          <div class="qs-chips" id="qsCity">
+            <button type="button" class="qs-chip" data-v="Montréal">Montréal</button>
+            <button type="button" class="qs-chip" data-v="Laval">Laval</button>
+            <button type="button" class="qs-chip" data-v="Longueuil">Longueuil</button>
+            <button type="button" class="qs-chip" data-v="Terrebonne">Terrebonne</button>
+            <button type="button" class="qs-chip" data-v="Blainville">Blainville</button>
+            <button type="button" class="qs-chip" data-v="" data-i18n="qs.otherCity">Autre ville</button>
+          </div>
         </div>
+        <button type="button" class="qs-go" onclick="quickStart()" data-i18n="qs.go">Continuer →</button>
       </div>
-      <div class="hero-illustration">
-        <div class="flow" aria-hidden="true">
-        <div class="flow-track"><i class="flow-progress"></i></div>
-        <div class="flow-cols">
-          <div class="flow-col fc1">
-            <div class="fc-head"><span class="fc-num">01</span><span class="fc-title" data-i18n="demo.s1">Décrivez votre projet</span></div>
-            <div class="fc-body">
-              <div class="fc-lbl" data-i18n="demo.type">Type de projet</div>
-              <div class="fc-chips">
-                <span class="chip c-cuisine" data-i18n="opt.kitchen">Cuisine</span>
-                <span class="chip" data-i18n="opt.bath">Salle de bain</span>
-                <span class="chip" data-i18n="opt.basement">Sous-sol</span>
-              </div>
-              <div class="fc-lbl" data-i18n="demo.city">Ville</div>
-              <div class="fc-chips">
-                <span class="chip">Montréal</span>
-                <span class="chip c-laval">Laval</span>
-                <span class="chip">Longueuil</span>
-                <span class="chip">Brossard</span>
-              </div>
-              <div class="fc-btn" data-i18n="demo.cont">Continuer →</div>
-            </div>
+      <div class="qs-err" id="qsErr" role="alert"></div>
+      <div class="hero-tags">
+        <span data-i18n="demo.t1">Sans engagement</span><span data-i18n="demo.t2">Un seul entrepreneur</span><span data-i18n="trust.tag">Réponse rapide</span>
+      </div>
+      <p class="hero-priv"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-i18n="qs.priv">Vos informations ne sont transmises qu'à un seul entrepreneur, jamais vendues à plusieurs.</span></p>
+    </div>
+  </section>
+
+  <section class="section mg-sec">
+    <div class="wrap">
+      <div class="section-head mg-head">
+        <span class="eyebrow" data-i18n="mg.eyebrow">En un coup d'œil</span>
+        <h2 data-i18n="mg.title">Du formulaire au contact direct</h2>
+      </div>
+      <div class="mg" aria-hidden="true">
+        <div class="mg-top"><span class="mg-tag" data-i18n="mg.tag">Illustration</span><span class="mg-prog"><i></i></span></div>
+        <div class="mg-cols">
+          <div class="mg-c c1">
+            <div class="mg-h"><b>01</b><span data-i18n="demo.s1">Décrivez votre projet</span></div>
+            <div class="mg-lbl" data-i18n="demo.type">Type de projet</div>
+            <div class="mg-chips"><span class="mg-chip sel1" data-i18n="opt.kitchen">Cuisine</span><span class="mg-chip" data-i18n="opt.bath">Salle de bain</span><span class="mg-chip" data-i18n="opt.basement">Sous-sol</span></div>
+            <div class="mg-lbl" data-i18n="demo.city">Ville</div>
+            <div class="mg-chips"><span class="mg-chip">Montréal</span><span class="mg-chip sel2">Laval</span><span class="mg-chip">Longueuil</span></div>
+            <div class="mg-btn" data-i18n="demo.cont">Continuer →</div>
           </div>
-          <div class="flow-col fc2">
-            <div class="fc-head"><span class="fc-num">02</span><span class="fc-title" data-i18n="demo.s2">On trouve le bon match</span></div>
-            <div class="fc-body">
-              <svg class="fc-map" viewBox="0 0 360 170" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs><pattern id="fdots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" class="dm-dot"/></pattern></defs>
-                <rect width="360" height="170" rx="8" fill="url(#fdots)"/>
-                <path class="dm-river" d="M0 92 C70 70 110 118 190 98 C250 84 300 120 360 100" stroke-width="10" stroke-linecap="round"/>
-                <g class="dm-lines" stroke-width="1.4" stroke-linecap="round">
-                  <path class="ln l1" pathLength="1" d="M130 105 L240 120"/>
-                  <path class="ln l2" pathLength="1" d="M130 105 L160 40"/>
-                  <path class="ln l3" pathLength="1" d="M240 120 L160 40"/>
-                </g>
-                <circle class="ring" cx="160" cy="40" r="22" stroke-width="2"/>
-                <circle class="nd n1" cx="130" cy="105" r="7" stroke-width="2"/>
-                <circle class="nd n2" cx="240" cy="120" r="7" stroke-width="2"/>
-                <circle class="nd n3" cx="160" cy="40" r="7" stroke-width="2"/>
-                <circle class="hit" cx="160" cy="40" r="7"/>
-                <text x="142" y="132" class="mt mt1">Montréal</text>
-                <text x="176" y="34" class="mt mt3 mt-hit">Laval</text>
-                <text x="252" y="144" class="mt mt2">Longueuil</text>
-              </svg>
-              <div class="fc-status">
-                <span class="st st-a" data-i18n="demo.search">Recherche dans votre secteur…</span>
-                <span class="st st-b" data-i18n="demo.found">Votre secteur : Laval</span>
-              </div>
-            </div>
+          <div class="mg-c c2">
+            <div class="mg-h"><b>02</b><span data-i18n="demo.s2">On trouve le bon match</span></div>
+            <svg class="mg-map" viewBox="0 0 320 190" fill="none">
+              <defs><pattern id="mgdots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#3a352e"/></pattern></defs>
+              <rect width="320" height="190" rx="10" fill="url(#mgdots)"/>
+              <g stroke-width="1.5" stroke-linecap="round">
+                <path class="mg-ln l1" pathLength="1" d="M160 100 L70 52" stroke="#6a5a3a"/>
+                <path class="mg-ln l2" pathLength="1" d="M160 100 L255 62" stroke="#6a5a3a"/>
+                <path class="mg-ln l3 win" pathLength="1" d="M160 100 L222 152" stroke="#e3a94f" stroke-width="2.2"/>
+              </g>
+              <circle class="mg-ring" cx="160" cy="100" r="26" stroke="#e3a94f" stroke-width="2"/>
+              <circle class="mg-nd n1" cx="70" cy="52" r="8" stroke-width="2"/>
+              <circle class="mg-nd n2" cx="255" cy="62" r="8" stroke-width="2"/>
+              <circle class="mg-nd n3" cx="222" cy="152" r="9" stroke-width="2"/>
+              <circle cx="160" cy="100" r="9" fill="#e3a94f"/>
+              <text x="160" y="80" text-anchor="middle" class="mg-t" data-i18n="mg.you">Votre projet</text>
+              <text x="222" y="176" text-anchor="middle" class="mg-t mg-tw" data-i18n="demo.pro">Entrepreneur partenaire</text>
+            </svg>
           </div>
-          <div class="flow-col fc3">
-            <div class="fc-head"><span class="fc-num">03</span><span class="fc-title" data-i18n="demo.s3">Un professionnel vous contacte</span></div>
-            <div class="fc-body">
-              <div class="fc-recap"><span data-i18n="opt.kitchen">Cuisine</span><span>Laval</span></div>
-              <div class="fc-pro">
-                <div class="av"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-                <div class="pro-body">
-                  <div class="pro-t" data-i18n="demo.pro">Entrepreneur partenaire</div>
-                  <div class="sk sk1"></div><div class="sk sk2"></div>
-                </div>
-                <div class="ck">✓</div>
-              </div>
-              <div class="fc-pills"><span data-i18n="demo.direct">Contact direct</span><span data-i18n="demo.free">Sans obligation</span></div>
+          <div class="mg-c c3">
+            <div class="mg-h"><b>03</b><span data-i18n="demo.s3">Un professionnel vous contacte</span></div>
+            <div class="mg-card">
+              <div class="mg-who"><span class="mg-av"></span><div><div class="mg-n" data-i18n="demo.pro">Entrepreneur partenaire</div><div class="mg-s" data-i18n="demo.direct">Contact direct</div></div>
+                <svg class="mg-ok" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#e3a94f" stroke-width="1.6"/><path class="mg-ck" pathLength="1" d="M7 12.5l3.2 3.2L17 9" stroke="#e3a94f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="mg-sk a"></div><div class="mg-sk b"></div><div class="mg-sk c"></div>
+              <div class="mg-pill" data-i18n="demo.free">Sans obligation</div>
             </div>
           </div>
         </div>
-      </div>
+        <div class="mg-bar"><i></i></div>
       </div>
     </div>
   </section>
@@ -721,6 +878,20 @@
     </div>
   </section>
 
+  <section class="section who">
+    <div class="wrap who-grid">
+      <div>
+        <span class="eyebrow" data-i18n="who.eyebrow">Qui est derrière MonRénoMatch</span>
+        <h2 data-i18n="who.title">Une vraie personne répond à vos questions.</h2>
+      </div>
+      <div>
+        <p data-i18n="who.p1">MonRénoMatch est une plateforme québécoise qui met en relation les propriétaires avec un entrepreneur en rénovation de leur secteur. Chaque demande est transmise à un seul professionnel, pour éviter la pluie d'appels.</p>
+        <p data-i18n="who.p2">Une question avant de remplir le formulaire? Écrivez-nous, on vous répond directement.</p>
+        <a class="who-mail" href="mailto:info@monrenomatch.ca">info@monrenomatch.ca</a>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="faq">
     <div class="wrap" style="max-width:760px;">
       <div class="section-head">
@@ -766,7 +937,7 @@
   <footer class="site">
     <div class="wrap footer-grid">
       <div class="logo" onclick="goHome()">
-        <svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#1f5a47"/><path d="M15 36 L32 20 L49 36" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#9fd9bb"/></svg>
+        <svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#e3a94f"/><path d="M15 36 L32 20 L49 36" stroke="#1a1405" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#1a1405" fill-opacity=".72"/></svg>
         MonRénoMatch
       </div>
       <div class="footer-links">
@@ -785,7 +956,7 @@
 <!-- ======================= ABOUT VIEW ======================= -->
 <div id="aboutView" style="display:none;">
   <header class="site"><div class="subpage-header wrap">
-    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#1f5a47"/><path d="M15 36 L32 20 L49 36" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#9fd9bb"/></svg>MonRénoMatch</div>
+    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#e3a94f"/><path d="M15 36 L32 20 L49 36" stroke="#1a1405" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#1a1405" fill-opacity=".72"/></svg>MonRénoMatch</div>
     <div style="display:flex; align-items:center; gap:12px;">
       <div class="lang-toggle"><button id="langBtnFrAbout" onclick="setLang('fr')">FR</button><button id="langBtnEnAbout" onclick="setLang('en')">EN</button></div>
       <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
@@ -803,7 +974,7 @@
 <!-- ======================= CONTACT VIEW ======================= -->
 <div id="contactView" style="display:none;">
   <header class="site"><div class="subpage-header wrap">
-    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#1f5a47"/><path d="M15 36 L32 20 L49 36" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#9fd9bb"/></svg>MonRénoMatch</div>
+    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#e3a94f"/><path d="M15 36 L32 20 L49 36" stroke="#1a1405" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#1a1405" fill-opacity=".72"/></svg>MonRénoMatch</div>
     <div style="display:flex; align-items:center; gap:12px;">
       <div class="lang-toggle"><button id="langBtnFrContact" onclick="setLang('fr')">FR</button><button id="langBtnEnContact" onclick="setLang('en')">EN</button></div>
       <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
@@ -821,7 +992,7 @@
 <!-- ======================= PRIVACY VIEW ======================= -->
 <div id="privacyView" style="display:none;">
   <header class="site"><div class="subpage-header wrap">
-    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#1f5a47"/><path d="M15 36 L32 20 L49 36" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#9fd9bb"/></svg>MonRénoMatch</div>
+    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#e3a94f"/><path d="M15 36 L32 20 L49 36" stroke="#1a1405" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#1a1405" fill-opacity=".72"/></svg>MonRénoMatch</div>
     <div style="display:flex; align-items:center; gap:12px;">
       <div class="lang-toggle"><button id="langBtnFrPriv" onclick="setLang('fr')">FR</button><button id="langBtnEnPriv" onclick="setLang('en')">EN</button></div>
       <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
@@ -857,7 +1028,7 @@
 <!-- ======================= TERMS VIEW ======================= -->
 <div id="termsView" style="display:none;">
   <header class="site"><div class="subpage-header wrap">
-    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#1f5a47"/><path d="M15 36 L32 20 L49 36" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#9fd9bb"/></svg>MonRénoMatch</div>
+    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#e3a94f"/><path d="M15 36 L32 20 L49 36" stroke="#1a1405" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#1a1405" fill-opacity=".72"/></svg>MonRénoMatch</div>
     <div style="display:flex; align-items:center; gap:12px;">
       <div class="lang-toggle"><button id="langBtnFrTerms" onclick="setLang('fr')">FR</button><button id="langBtnEnTerms" onclick="setLang('en')">EN</button></div>
       <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
@@ -892,7 +1063,7 @@
 <!-- ======================= COOKIES VIEW ======================= -->
 <div id="cookiesView" style="display:none;">
   <header class="site"><div class="subpage-header wrap">
-    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#1f5a47"/><path d="M15 36 L32 20 L49 36" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#9fd9bb"/></svg>MonRénoMatch</div>
+    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#e3a94f"/><path d="M15 36 L32 20 L49 36" stroke="#1a1405" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#1a1405" fill-opacity=".72"/></svg>MonRénoMatch</div>
     <div style="display:flex; align-items:center; gap:12px;">
       <div class="lang-toggle"><button id="langBtnFrCookies" onclick="setLang('fr')">FR</button><button id="langBtnEnCookies" onclick="setLang('en')">EN</button></div>
       <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
@@ -910,7 +1081,7 @@
 <!-- ======================= PARTNER VIEW (Devenir partenaire) ======================= -->
 <div id="partnerView" style="display:none;">
   <header class="site"><div class="subpage-header wrap">
-    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#1f5a47"/><path d="M15 36 L32 20 L49 36" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#9fd9bb"/></svg>MonRénoMatch</div>
+    <div class="logo" onclick="goHome()"><svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#e3a94f"/><path d="M15 36 L32 20 L49 36" stroke="#1a1405" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#1a1405" fill-opacity=".72"/></svg>MonRénoMatch</div>
     <div style="display:flex; align-items:center; gap:12px;">
       <div class="lang-toggle"><button id="langBtnFrPartner" onclick="setLang('fr')">FR</button><button id="langBtnEnPartner" onclick="setLang('en')">EN</button></div>
       <button class="btn btn-ghost btn-sm" onclick="showPage('homeView')" data-i18n="page.back">← Retour à l'accueil</button>
@@ -1056,7 +1227,7 @@
 <div id="formView">
   <div class="form-header">
     <div class="logo" onclick="goHome()" style="font-size:1.1rem;">
-      <svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#1f5a47"/><path d="M15 36 L32 20 L49 36" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#9fd9bb"/></svg>
+      <svg class="logo-mark" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="16" fill="#e3a94f"/><path d="M15 36 L32 20 L49 36" stroke="#1a1405" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="6.2" fill="#1a1405" fill-opacity=".72"/></svg>
       MonRénoMatch
     </div>
     <div style="display:flex; align-items:center; gap:12px;">
@@ -1103,6 +1274,10 @@
         <button class="opt-card" type="button" onclick="pickCity(this,'Laval')">Laval</button>
         <button class="opt-card" type="button" onclick="pickCity(this,'Longueuil')">Longueuil</button>
         <button class="opt-card" type="button" onclick="pickCity(this,'Brossard')">Brossard</button>
+        <button class="opt-card" type="button" onclick="pickCity(this,'Terrebonne')">Terrebonne</button>
+        <button class="opt-card" type="button" onclick="pickCity(this,'Blainville')">Blainville</button>
+        <button class="opt-card" type="button" onclick="pickCity(this,'Mascouche')">Mascouche</button>
+        <button class="opt-card" type="button" onclick="pickCity(this,'Saint-Hubert')">Saint-Hubert</button>
       </div>
       <input class="finput" id="f_ville" type="text" style="margin-top:12px;" oninput="clearCityChips()" data-i18n-placeholder="s2.cityPh" placeholder="ex. Laval">
       <input class="finput" id="f_cp" type="text" style="margin-top:12px;" data-i18n-placeholder="s2.postalPh" placeholder="ex. H7A 1A1 (facultatif)">
@@ -1204,8 +1379,8 @@
   const translations = {
     fr: {
       'nav.how':'Comment ça marche','nav.faq':'FAQ','nav.contractor':'Vous êtes entrepreneur?','nav.cta':'Décrire mon projet',
-      'hero.eyebrow':'Rénovation résidentielle · Québec','hero.title':'Votre projet de rénovation commence ici.',
-      'hero.lede':'Décrivez votre projet et découvrez des professionnels qui pourraient vous aider — gratuitement, sans obligation ni engagement.',
+      'hero.eyebrow':'Rénovation résidentielle · Grand Montréal','hero.title':'Votre projet mérite <span class="hl">le bon entrepreneur.</span>',
+      'hero.lede':'Un seul formulaire, un seul professionnel de votre secteur. Pas de relances de cinq entreprises.',
       'hero.cta':'Décrire mon projet →','hero.note':'2 minutes · aucune carte de crédit',
       'how.eyebrow':'Le processus','how.title':'Comment ça fonctionne',
       'how.s1t':'Décrivez votre projet','how.s1p':'Quelques questions simples sur votre projet, votre budget et votre échéancier — deux minutes suffisent.',
@@ -1238,7 +1413,7 @@
       'form.quit':'Quitter',
       's1.title':'Quel type de projet voulez-vous réaliser?','s1.hint':"Choisissez l'option qui correspond le mieux à votre projet.",
       's2b.title':'Parlons un peu de votre projet','s2b.hint':'Quelques clics, rien n\'est final.','s3b.title':'Comment vous joindre?','s3b.hint':'Dernière étape : vos coordonnées.','opt.optional':'(facultatif)','btn.change':'modifier',
-      'trust.note':'<b>Vos informations restent entre bonnes mains.</b> Elles ne sont transmises qu\'à un seul entrepreneur, jamais vendues à plusieurs. Pas de pourriel. Pour les faire supprimer : info@monrenomatch.ca.','trust.tag':'Réponse rapide','demo.tag':'APERÇU','demo.s1':'Décrivez votre projet','demo.s2':'On trouve le bon match','demo.s3':'Un professionnel vous contacte','demo.type':'Type de projet','demo.city':'Ville','demo.cont':'Continuer →','demo.search':'Recherche dans votre secteur…','demo.found':'Votre secteur : Laval','demo.pro':'Entrepreneur partenaire','demo.direct':'Contact direct','demo.free':'Sans obligation','demo.k1':'01 Projet','demo.k2':'02 Match','demo.k3':'03 Contact','demo.t1':'Sans engagement','demo.t2':'Un seul entrepreneur',
+      'trust.note':'<b>Vos informations restent entre bonnes mains.</b> Elles ne sont transmises qu\'à un seul entrepreneur, jamais vendues à plusieurs. Pas de pourriel. Pour les faire supprimer : info@monrenomatch.ca.','trust.tag':'Réponse rapide','qs.type':'Type de projet','qs.city':'Votre ville','qs.otherCity':'Autre ville','qs.go':'Continuer →','qs.priv':'Vos informations ne sont transmises qu\'à un seul entrepreneur, jamais vendues à plusieurs.','who.eyebrow':'Qui est derrière MonRénoMatch','who.title':'Une vraie personne répond à vos questions.','who.p1':'MonRénoMatch est une plateforme québécoise qui met en relation les propriétaires avec un entrepreneur en rénovation de leur secteur. Chaque demande est transmise à un seul professionnel, pour éviter la pluie d\'appels.','who.p2':'Une question avant de remplir le formulaire? Écrivez-nous, on vous répond directement.','mg.eyebrow':'En un coup d\'œil','mg.title':'Du formulaire au contact direct','mg.tag':'Illustration','mg.you':'Votre projet','demo.tag':'APERÇU','demo.s1':'Décrivez votre projet','demo.s2':'On trouve le bon match','demo.s3':'Un professionnel vous contacte','demo.type':'Type de projet','demo.city':'Ville','demo.cont':'Continuer →','demo.search':'Recherche dans votre secteur…','demo.found':'Votre secteur : Laval','demo.pro':'Entrepreneur partenaire','demo.direct':'Contact direct','demo.free':'Sans obligation','demo.k1':'01 Projet','demo.k2':'02 Match','demo.k3':'03 Contact','demo.t1':'Sans engagement','demo.t2':'Un seul entrepreneur',
       's2.title':'Où se trouve votre projet?','s2.hint':'Ça nous aide à trouver un professionnel proche de chez vous.',
       's2.city':'Ville','s2.cityPh':'ex. Laval','s2.postal':'Code postal (facultatif)','s2.postalPh':'ex. H7A 1A1 (facultatif)',
       's3.title':'Êtes-vous propriétaire du bâtiment?',
@@ -1342,8 +1517,8 @@
     },
     en: {
       'nav.how':'How it works','nav.faq':'FAQ','nav.contractor':'Are you a contractor?','nav.cta':'Describe my project',
-      'hero.eyebrow':'Residential renovation · Quebec','hero.title':'Your renovation project starts here.',
-      'hero.lede':'Describe your project and discover professionals who could help — free, with no obligation or commitment.',
+      'hero.eyebrow':'Residential renovation · Greater Montreal','hero.title':'Your project deserves <span class="hl">the right contractor.</span>',
+      'hero.lede':'One form, one professional in your area. No chasing five companies.',
       'hero.cta':'Describe my project →','hero.note':'2 minutes · no credit card',
       'how.eyebrow':'The process','how.title':'How it works',
       'how.s1t':'Describe your project','how.s1p':'A few simple questions about your project, budget and timeline — two minutes is enough.',
@@ -1376,7 +1551,7 @@
       'form.quit':'Exit',
       's1.title':'What type of project do you want to do?','s1.hint':'Choose the option that best fits your project.',
       's2b.title':'Tell us a bit about your project','s2b.hint':'A few taps, nothing is final.','s3b.title':'How can we reach you?','s3b.hint':'Last step: your contact details.','opt.optional':'(optional)','btn.change':'change',
-      'trust.note':'<b>Your information stays in good hands.</b> It is shared with one contractor only, never sold to several. No spam. To have it deleted: info@monrenomatch.ca.','trust.tag':'Fast response','demo.tag':'PREVIEW','demo.s1':'Describe your project','demo.s2':'We find the right match','demo.s3':'A professional contacts you','demo.type':'Project type','demo.city':'City','demo.cont':'Continue →','demo.search':'Searching your area…','demo.found':'Your area: Laval','demo.pro':'Partner contractor','demo.direct':'Direct contact','demo.free':'No obligation','demo.k1':'01 Project','demo.k2':'02 Match','demo.k3':'03 Contact','demo.t1':'No obligation','demo.t2':'One contractor only',
+      'trust.note':'<b>Your information stays in good hands.</b> It is shared with one contractor only, never sold to several. No spam. To have it deleted: info@monrenomatch.ca.','trust.tag':'Fast response','qs.type':'Project type','qs.city':'Your city','qs.otherCity':'Other city','qs.go':'Continue →','qs.priv':'Your details are shared with one contractor only, never sold to several.','who.eyebrow':'Who is behind MonRénoMatch','who.title':'A real person answers your questions.','who.p1':'MonRénoMatch is a Quebec platform that connects homeowners with a renovation contractor in their area. Each request goes to a single professional, so you avoid the flood of calls.','who.p2':'A question before filling in the form? Write to us, we reply directly.','mg.eyebrow':'At a glance','mg.title':'From form to direct contact','mg.tag':'Illustration','mg.you':'Your project','demo.tag':'PREVIEW','demo.s1':'Describe your project','demo.s2':'We find the right match','demo.s3':'A professional contacts you','demo.type':'Project type','demo.city':'City','demo.cont':'Continue →','demo.search':'Searching your area…','demo.found':'Your area: Laval','demo.pro':'Partner contractor','demo.direct':'Direct contact','demo.free':'No obligation','demo.k1':'01 Project','demo.k2':'02 Match','demo.k3':'03 Contact','demo.t1':'No obligation','demo.t2':'One contractor only',
       's2.title':'Where is your project located?','s2.hint':'This helps us find a professional near you.',
       's2.city':'City','s2.cityPh':'e.g. Laval','s2.postal':'Postal code (optional)','s2.postalPh':'e.g. H7A 1A1 (optional)',
       's3.title':'Do you own the building?',
@@ -1597,6 +1772,32 @@
     document.getElementById('ownerInfoBox').style.display = show ? 'block' : 'none';
   }
 
+
+  // ---- Démarrage rapide depuis la page d'accueil ----
+  (function(){
+    function bind(id){
+      const box=document.getElementById(id); if(!box) return;
+      box.addEventListener('click',function(e){
+        const b=e.target.closest('.qs-chip'); if(!b) return;
+        box.querySelectorAll('.qs-chip').forEach(x=>x.classList.toggle('on',x===b));
+        document.getElementById('qsErr').textContent='';
+      });
+    }
+    bind('qsType'); bind('qsCity');
+  })();
+  function quickStart(){
+    const t=document.querySelector('#qsType .qs-chip.on');
+    const c=document.querySelector('#qsCity .qs-chip.on');
+    const err=document.getElementById('qsErr');
+    if(!t){ err.textContent = currentLang==='fr' ? 'Choisissez d\u2019abord le type de projet.' : 'Please choose your project type first.'; return; }
+    goToForm(t.dataset.v);
+    const city=c ? c.dataset.v : '';
+    if(city){
+      const btn=[...document.querySelectorAll('#cityGrid .opt-card')].find(x=>x.textContent.trim()===city);
+      if(btn){ pickCity(btn, city); }
+      else { document.getElementById('f_ville').value=city; }
+    }
+  }
   function pickCity(btn, city){
     document.getElementById('f_ville').value = city;
     document.querySelectorAll('#cityGrid .opt-card').forEach(x => x.classList.toggle('selected', x === btn));
